@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            加密货币常见加密算法 | 
+        
+        区块链技术指北 | ChainONE 官方博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" href="/img/favicon.ico">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="互联网世界，密码无处不在。中心化的系统存在账户，有账户就有账户名和密码，密码可以说是标识账号归属的最重要手段之一。加密技术是加密货币的核心支撑。本文首先介绍了密码学，然后介绍加密算法的分类，接着列举了常见的对称加密算法和非对称加密算法，然后讲解了加密货币使用的加密算法。我们可以看到，加密货币使用的加密算法有别于传统的加密算法，基本上会在传统的加密算法基础上做改进。对于个人而言，需要了解的是，密码越复杂，被破解的难度越高，概率越低。理解加密技术对理解加密数字货币会有很大的帮助，后续笔者再根据不同的加密算法做深入探讨。">
+    <meta name="keywords" content="区块链, ChainONE,Blockchain,Cryptography">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="msapplication-starturl" content="https://blog.chainon.io/2018/01/16/blockchain-cryptography/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel="alternate" type="application/atom+xml" href="atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.chainon.io/2018/01/16/blockchain-cryptography/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="加密货币常见加密算法 | 区块链技术指北 | ChainONE 官方博客">
+    <meta property="og:image" content="/img/favicon.ico">
+    <meta property="og:description" content="互联网世界，密码无处不在。中心化的系统存在账户，有账户就有账户名和密码，密码可以说是标识账号归属的最重要手段之一。加密技术是加密货币的核心支撑。本文首先介绍了密码学，然后介绍加密算法的分类，接着列举了常见的对称加密算法和非对称加密算法，然后讲解了加密货币使用的加密算法。我们可以看到，加密货币使用的加密算法有别于传统的加密算法，基本上会在传统的加密算法基础上做改进。对于个人而言，需要了解的是，密码越复杂，被破解的难度越高，概率越低。理解加密技术对理解加密数字货币会有很大的帮助，后续笔者再根据不同的加密算法做深入探讨。">
+    <meta property="og:article:tag" content="Blockchain"> <meta property="og:article:tag" content="Cryptography"> 
+
+    
+        <meta property="article:published_time" content="Tue Jan 16 2018 22:22:22 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 23 2020 22:56:52 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://blog.chainon.io/2018/01/16/blockchain-cryptography/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://blog.chainon.io/2018/01/16/blockchain-cryptography/index.html",
+    "headline": "加密货币常见加密算法",
+    "datePublished": "Tue Jan 16 2018 22:22:22 GMT+0800",
+    "dateModified": "Tue Jun 23 2020 22:56:52 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "ChainONE",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Empower Blockchain."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "区块链技术指北 | ChainONE 官方博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.ico"
+        }
+    },
+    "keywords": ",Blockchain,Cryptography区块链, ChainONE",
+    "description": "互联网世界，密码无处不在。中心化的系统存在账户，有账户就有账户名和密码，密码可以说是标识账号归属的最重要手段之一。加密技术是加密货币的核心支撑。本文首先介绍了密码学，然后介绍加密算法的分类，接着列举了常见的对称加密算法和非对称加密算法，然后讲解了加密货币使用的加密算法。我们可以看到，加密货币使用的加密算法有别于传统的加密算法，基本上会在传统的加密算法基础上做改进。对于个人而言，需要了解的是，密码越复杂，被破解的难度越高，概率越低。理解加密技术对理解加密数字货币会有很大的帮助，后续笔者再根据不同的加密算法做深入探讨。",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57297247-2', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0x00-密码学"><span class="post-toc-number">1.</span> <span class="post-toc-text">0x00 密码学</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0x01-分类"><span class="post-toc-number">2.</span> <span class="post-toc-text">0x01 分类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0x02-对称加密算法"><span class="post-toc-number">3.</span> <span class="post-toc-text">0x02 对称加密算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-DES-加密算法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">2.1 DES 加密算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-AES-加密算法"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.2 AES 加密算法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-3DES-加密算法"><span class="post-toc-number">4.</span> <span class="post-toc-text">2.3 3DES 加密算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0x03-非对称加密算法"><span class="post-toc-number">5.</span> <span class="post-toc-text">0x03 非对称加密算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-RSA-加密算法"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">3.1 RSA 加密算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-2-ECC-加密算法"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">3.2 ECC 加密算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-ECC-与-RSA-比较"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">3.3 ECC 与 RSA 比较</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0x04-散列算法"><span class="post-toc-number">6.</span> <span class="post-toc-text">0x04 散列算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-1-MD5"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">4.1 MD5</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-2-SHA-1"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">4.2 SHA-1</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-3-SHA-1-与-MD5-的比较"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">4.3 SHA-1 与 MD5 的比较</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0x05-加密货币加密算法"><span class="post-toc-number">7.</span> <span class="post-toc-text">0x05 加密货币加密算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-1-SHA-256"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">5.1 SHA-256</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-2-scrypt"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">5.2 scrypt</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-3-ETHASH"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">5.3 ETHASH</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-4-ECDSA"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">5.4 ECDSA</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-5-X11"><span class="post-toc-number">7.5.</span> <span class="post-toc-text">5.5 X11</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0x06-小结"><span class="post-toc-number">8.</span> <span class="post-toc-text">0x06 小结</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#0x07-参考"><span class="post-toc-number">9.</span> <span class="post-toc-text">0x07 参考</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                加密货币常见加密算法
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ChainONE</strong>
+        <span>1月 16, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC3ElEQVR42u3aS24bMRAFQN3/0snWQGDpve5xLA1rVsZAIllcuNWfx58jnwc2NjY2NjY2Njb2W7If8fP18/9+97vV8vffner5vsmZsbGxsU9gv/jXHxw0OdxzWHJBszNjY2Njn8Nut3x+Bfl3E3y7DjY2Njb2iyXiwLNJRWZpCTY2Njb2fpufDkjY2NjY2Jui0lWlqH3Q+q+1NGxsbOy3Z28avb/19y/3t7GxsbHfhj0cZCxDUTKO04ao1fAlNjY29o3YeQEoL+Vvhng2b1bDl9jY2Ngfy26LPpuRyraElAx65sEPGxsb+67sZHQyOcRz9qaFMLugVVcEGxsb+wPZyUBkApi1ZttRnjzEYmNjY5/Abo/VXs0sLZmFuhe7YGNjY9+anVzBfmg+H7uZlZZW/W1sbGzsj2XPftxv0oYcc9UVY2NjY5/Dnm2fNH1n7eFZyQkbGxv7THY7cJmnLm2C0bYBiuvDxsbGPox9VUM3Dz+zwJmEYWxsbOwT2G3ycFVDd5Oo1FeJjY2NfQB7hilCSNysbctM9cgONjY29o3YLbUdo2nTmzzI1SEWGxsb+6bsPCDlIapt/c4uty0tYWNjY9+V3QaS50ecFac2LYeipIWNjY19U/ZVm7WjOZvyUBsOsbGxse/Nzsv0myGb2Tptm+FFYxgbGxv7puwZZnOINuGZhbeiloaNjY19C3b+c/+qENWuPGtRYGNjY5/Drpumo8CW7JW3EOriFDY2NvYB7HyJ/XDPJnXJgx82Njb2CezZsfKLy9/PWgLPUxdsbGzsE9iP+Ek+v0kb8jbAMBHCxsbGvjU7Dx5FY7VsIcwaA9jY2NjY7ahlXnJqk4e8vJUXvLCxsbGxkzSgHaDME4xZkvODAQwbGxv7FuwkIcnD0j7xKM6MjY2NfQD7qiZrG+Tak7TtCmxsbOwT2LMBx1n6kQe8WZD7wf42NjY29luyz3mwsbGxsbGxsbGx3+b5C9GdKlzorDm3AAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Blockchain/">Blockchain</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Cryptography/">Cryptography</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=加密货币常见加密算法&url=https://blog.chainon.io/2018/01/16/blockchain-cryptography/index.html&pic=https://blog.chainon.io/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=加密货币常见加密算法&url=https://blog.chainon.io/2018/01/16/blockchain-cryptography/index.html&via=ChainONE" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.chainon.io/2018/01/16/blockchain-cryptography/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.chainon.io/2018/01/16/blockchain-cryptography/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.chainon.io/2018/01/16/blockchain-cryptography/index.html&title=加密货币常见加密算法" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=区块链技术指北 | ChainONE 官方博客&title=加密货币常见加密算法&summary=ChainONE, Empower Blockchain. 区块链技术指北，构建优质社区，传播和分享区块链技术，探讨潜在价值，连接技术和商业。&pics=https://blog.chainon.io/img/favicon.ico&url=https://blog.chainon.io/2018/01/16/blockchain-cryptography/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.chainon.io/2018/01/16/blockchain-cryptography/index.html&text=加密货币常见加密算法" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>互联网世界，密码无处不在。中心化的系统存在账户，有账户就有账户名和密码，密码可以说是标识账号归属的最重要手段之一。加密技术是加密货币的核心支撑。本文首先介绍了密码学，然后介绍加密算法的分类，接着列举了常见的对称加密算法和非对称加密算法，然后讲解了加密货币使用的加密算法。我们可以看到，加密货币使用的加密算法有别于传统的加密算法，基本上会在传统的加密算法基础上做改进。对于个人而言，需要了解的是，密码越复杂，被破解的难度越高，概率越低。理解加密技术对理解加密数字货币会有很大的帮助，后续笔者再根据不同的加密算法做深入探讨。<br><a id="more"></a></p>
+<p><code>文/温国兵</code></p>
+<blockquote>
+<p>本文由币乎社区（bihu.com）内容支持计划奖励。</p>
+</blockquote>
+<p>这是「区块链技术指北」的第 20 篇文章。</p>
+<blockquote>
+<p>如果对我感兴趣，想和我交流，我的微信号：<strong>Wentasy</strong>，加我时简单介绍下自己，并注明来自「区块链技术指北」。同时我会把你拉入微信群「区块链技术指北」。BTW，李笑来老师也加入了我的知识星球，文末有加入方式。</p>
+</blockquote>
+<h3 id="0x00-密码学"><a href="#0x00-密码学" class="headerlink" title="0x00 密码学"></a>0x00 密码学</h3><hr>
+<p><strong>互联网世界，密码无处不在。中心化的系统存在账户，有账户就有账户名和密码，密码可以说是标识账号归属的最重要手段之一。</strong></p>
+<p>我们来看维基百科怎么阐释 <strong>密码学</strong>。</p>
+<blockquote>
+<p>密码学（英语：Cryptography）可分为古典密码学和现代密码学。在西欧语文中，密码学一词源于希腊语 kryptós“隐藏的”，和 gráphein“书写”。古典密码学主要关注信息的保密书写和传递，以及与其相对应的破译方法。而现代密码学不只关注信息保密问题，还同时涉及信息完整性验证（消息验证码）、信息发布的不可抵赖性（数字签名）、以及在分布式计算中产生的来源于内部和外部的攻击的所有信息安全问题。古典密码学与现代密码学的重要区别在于，古典密码学的编码和破译通常依赖于设计者和敌手的创造力与技巧，作为一种实用性艺术存在，并没有对于密码学原件的清晰定义。而现代密码学则起源于 20 世纪末出现的大量相关理论，这些理论使得现代密码学成为了一种可以系统而严格地学习的科学。[1]</p>
+</blockquote>
+<p>使用密码学可以达到以下目的：</p>
+<ul>
+<li>保密性：防止用户的标识或数据被读取；</li>
+<li>数据完整性：防止数据被更改；</li>
+<li>身份验证：确保数据发自特定的一方。</li>
+</ul>
+<p><img src="https://i.imgur.com/Ono8Tk0.jpg" alt="2018-01-16-blockchain-crypto"></p>
+<blockquote>
+<p>题图来自: © Sabarinath / Meltdown and Spectre / techlog360.com</p>
+</blockquote>
+<h3 id="0x01-分类"><a href="#0x01-分类" class="headerlink" title="0x01 分类"></a>0x01 分类</h3><hr>
+<p>在讲解加密算法之前，我们来看下 <strong>Base64 编码</strong>。Base64 编码可对传输中的数据进行简单处理，使之不易被辨认，它并不是一种加密算法，它只是一种编码方式。</p>
+<p>比如读者在终端执行如下命令就可以获取到我的邮箱：</p>
+<pre><code class="bash">echo ZGJhcm9iaW53ZW5AZ21haWwuY29tCg== |  base64 --decode
+</code></pre>
+<p>根据密钥类型不同将现代密码技术分为两类：<strong>对称加密算法（秘密钥匙加密）</strong> 和 <strong>非对称加密算法（公开密钥加密）</strong>。对称钥匙加密系统是加密和解密均采用同一把秘密钥匙，而且通信双方都必须获得这把钥匙，并保持钥匙的秘密。非对称密钥加密系统采用的加密钥匙（公钥）和解密钥匙（私钥）是不同的。[2]</p>
+<h3 id="0x02-对称加密算法"><a href="#0x02-对称加密算法" class="headerlink" title="0x02 对称加密算法"></a>0x02 对称加密算法</h3><hr>
+<p>对称加密算法用来对敏感数据等信息进行加密，常用的算法包括：</p>
+<ul>
+<li><strong>DES（Data Encryption Standard）</strong>：数据加密标准，速度较快，适用于加密大量数据的场合；</li>
+<li><strong>3DES（Triple DES）</strong>：是基于 DES，对一块数据用三个不同的密钥进行三次加密，强度更高；</li>
+<li><strong>AES（Advanced Encryption Standard）</strong>：高级加密标准，是下一代的加密算法标准，速度快，安全级别高。</li>
+</ul>
+<h4 id="2-1-DES-加密算法"><a href="#2-1-DES-加密算法" class="headerlink" title="2.1 DES 加密算法"></a>2.1 DES 加密算法</h4><hr>
+<p>DES 加密算法是一种分组密码，以 64 位为分组对数据加密，它的密钥长度是 56 位，加密解密用同一算法。DES 加密算法是对密钥进行保密，而公开算法，包括加密和解密算法。这样，只有掌握了和发送方相同密钥的人才能解读由 DES 加密算法加密的密文数据。因此，破译 DES 加密算法实际上就是搜索密钥的编码。对于 56 位长度的密钥来说，如果用穷举法来进行搜索的话，其运算次数为 256。<br>随着计算机系统能力的不断发展，DES 的安全性比它刚出现时会弱得多，然而从非关键性质的实际出发，仍可以认为它是足够的。不过，DES 现在仅用于旧系统的鉴定，而更多地选择新的加密标准。</p>
+<h4 id="2-2-AES-加密算法"><a href="#2-2-AES-加密算法" class="headerlink" title="2.2 AES 加密算法"></a>2.2 AES 加密算法</h4><hr>
+<p>AES 算法基于排列和置换运算。排列是对数据重新进行安排，置换是将一个数据单元替换为另一个。AES 使用几种不同的方法来执行排列和置换运算。</p>
+<p>AES 是一个迭代的、对称密钥分组的密码，它可以使用 128、192 和 256 位密钥，并且用 128 位（16 字节）分组加密和解密数据。与公共密钥密码使用密钥对不同，对称密钥密码使用相同的密钥加密和解密数据。通过分组密码返回的加密数据的位数与输入数据相同。迭代加密使用一个循环结构，在该循环中重复置换和替换输入数据。</p>
+<h3 id="2-3-3DES-加密算法"><a href="#2-3-3DES-加密算法" class="headerlink" title="2.3 3DES 加密算法"></a>2.3 3DES 加密算法</h3><hr>
+<p>3DES 是三重数据加密，且可以逆推的一种算法方案。但由于 3DES 的算法是公开的，所以算法本身没有密钥可言，主要依靠唯一密钥来确保数据加解密的安全。到目前为止，仍没有人能破解 3DES。</p>
+<p>3DES 和 AES 有什么区别呢？AES 加密算法使用的对称 block 密码，密钥长度有 128、192 和 256 位密码，加密速度快，解密时间（假设机器每秒尝试 255 个密钥）大约需要 1490000 亿年，资源消耗低；而 3DES 加密算法使用的是对称 feistel 密码，密钥长度有 112 位或 168 位，加密速度慢，同等条件下解密时间大约需要 46 亿年，资源消耗中等。</p>
+<h3 id="0x03-非对称加密算法"><a href="#0x03-非对称加密算法" class="headerlink" title="0x03 非对称加密算法"></a>0x03 非对称加密算法</h3><hr>
+<p>常见的非对称加密算法如下：</p>
+<ul>
+<li><strong>RSA</strong>：由 RSA 公司发明，是一个支持变长密钥的公共密钥算法，需要加密的文件块的长度也是可变的；</li>
+<li><strong>DSA（Digital Signature Algorithm）</strong>：数字签名算法，是一种标准的 DSS（数字签名标准）；</li>
+<li><strong>ECC（Elliptic Curves Cryptography）</strong>：椭圆曲线密码编码学。</li>
+</ul>
+<h4 id="3-1-RSA-加密算法"><a href="#3-1-RSA-加密算法" class="headerlink" title="3.1 RSA 加密算法"></a>3.1 RSA 加密算法</h4><hr>
+<p><strong>RSA 加密算法</strong> 是一种非对称加密算法。在公开密钥加密和电子商业中 RSA 被广泛使用。RSA 是 1977 年由罗纳德 · 李维斯特（Ron Rivest）、阿迪 · 萨莫尔（Adi Shamir）和伦纳德 · 阿德曼（Leonard Adleman）一起提出的。当时他们三人都在麻省理工学院工作。RSA 就是他们三人姓氏开头字母拼在一起组成的。</p>
+<p>对极大整数做因数分解的难度决定了 RSA 算法的可靠性。换言之，对一极大整数做因数分解愈困难，RSA 算法愈可靠。假如有人找到一种快速因数分解的算法的话，那么用 RSA 加密的信息的可靠性就肯定会极度下降。但找到这样的算法的可能性是非常小的。今天只有短的 RSA 钥匙才可能被强力方式解破。到目前为止，世界上还没有任何可靠的攻击 RSA 算法的方式。只要其钥匙的长度足够长，用 RSA 加密的信息实际上是不能被解破的。[3]</p>
+<h4 id="3-2-ECC-加密算法"><a href="#3-2-ECC-加密算法" class="headerlink" title="3.2 ECC 加密算法"></a>3.2 ECC 加密算法</h4><hr>
+<p>椭圆曲线密码学（英语：Elliptic curve cryptography，缩写为 ECC），一种建立公开密钥加密的算法，基于 <strong>椭圆曲线数学</strong>。椭圆曲线在密码学中的使用是在 1985 年由 Neal Koblitz 和 Victor Miller 分别独立提出的。</p>
+<p>ECC 的主要优势是在某些情况下它比其他的方法使用更小的密钥——比如 RSA 加密算法——提供相当的或更高等级的安全。ECC 的另一个优势是可以定义群之间的双线性映射，基于 Weil 对或是 Tate 对；双线性映射已经在密码学中发现了大量的应用，例如基于身份的加密。不过一个缺点是加密和解密操作的实现比其他机制花费的时间长。[4]</p>
+<h4 id="3-3-ECC-与-RSA-比较"><a href="#3-3-ECC-与-RSA-比较" class="headerlink" title="3.3 ECC 与 RSA 比较"></a>3.3 ECC 与 RSA 比较</h4><hr>
+<p>ECC 和 RSA 相比，在许多方面都有对绝对的优势，主要体现在以下方面：</p>
+<ul>
+<li><strong>抗攻击性强</strong>。相同的密钥长度，其抗攻击性要强很多倍。</li>
+<li><strong>计算量小，处理速度快</strong>。ECC 总的速度比 RSA、DSA 要快得多。</li>
+<li><strong>存储空间占用小</strong>。ECC 的密钥尺寸和系统参数与 RSA、DSA 相比要小得多，意味着它所占的存贮空间要小得多。这对于加密算法在 IC 卡上的应用具有特别重要的意义。</li>
+<li><strong>带宽要求低</strong>。当对长消息进行加解密时，三类密码系统有相同的带宽要求，但应用于短消息时 ECC 带宽要求却低得多。带宽要求低使 ECC 在无线网络领域具有广泛的应用前景。</li>
+</ul>
+<p>关于 ECC 与 RSA 的测试和分析，可以参考 <a href="https://www.jianshu.com/p/e27ab5222fa9" target="_blank" rel="noopener">公钥加密算法那些事，RSA 与 ECC 系统对比</a>。</p>
+<h3 id="0x04-散列算法"><a href="#0x04-散列算法" class="headerlink" title="0x04 散列算法"></a>0x04 散列算法</h3><hr>
+<p>散列是信息的提炼，通常其长度要比信息小得多，且为一个固定长度。加密性强的散列一定是不可逆的，这就意味着通过散列结果，无法推出任何部分的原始信息。任何输入信息的变化，哪怕仅一位，都将导致散列结果的明显变化，这称之为雪崩效应。散列还应该是防冲突的，即找不出具有相同散列结果的两条信息。具有这些特性的散列结果就可以用于验证信息是否被修改。</p>
+<p><strong>单向散列函数一般用于产生消息摘要，密钥加密等</strong>，常见的有：</p>
+<ul>
+<li>MD5（Message Digest Algorithm 5）：是 RSA 数据安全公司开发的一种单向散列算法；</li>
+<li>SHA（Secure Hash Algorithm）：可以对任意长度的数据运算生成一个 160 位的数值。</li>
+</ul>
+<h4 id="4-1-MD5"><a href="#4-1-MD5" class="headerlink" title="4.1 MD5"></a>4.1 MD5</h4><hr>
+<p><strong>MD5 为计算机安全领域广泛使用的一种散列函数，用以提供消息的完整性保护。</strong>对 MD5 加密算法简要的叙述可以为：MD5 以 512 位分组来处理输入的信息，且每一分组又被划分为 16 个 32 位子分组，经过了一系列的处理后，算法的输出由四个 32 位分组组成，将这四个 32 位分组级联后将生成—个 128 位散列值。</p>
+<p>MD5 被广泛用于各种软件的密码认证和钥匙识别上。MD5 用的是哈希函数，它的典型应用是对一段信息产生信息摘要，以防止被篡改。MD5 的典型应用是对一段 Message 产生 fingerprint 指纹，以防止被 “篡改”。如果再有—个第三方的认证机构，用 MD5 还可以防止文件作者的 “抵赖”，这就是所谓的数字签名应用。MD5 还广泛用于操作系统的登陆认证上，如 UNIX、各类 BSD 系统登录密码、数字签名等诸多方。</p>
+<h4 id="4-2-SHA-1"><a href="#4-2-SHA-1" class="headerlink" title="4.2 SHA-1"></a>4.2 SHA-1</h4><hr>
+<p>SHA-1 是一种数据加密算法，该算法的思想是接收一段明文，然后以一种不可逆的方式将它转换成一段（通常更小）密文，也可以简单的理解为取一串输入码（称为预映射或信息），并把它们转化为长度较短、位数固定的输出序列即散列值（也称为信息摘要或信息认证代码）的过程。</p>
+<p>单向散列函数的安全性在于其产生散列值的操作过程具有较强的单向性。如果在输入序列中嵌入密码，那么任何人在不知道密码的情况下都不能产生正确的散列值，从而保证了其安全性。SHA 将输入流按照每块 512 位（64 个字节）进行分块，并产生 20 个字节的被称为信息认证代码或信息摘要的输出。</p>
+<p>该算法输入报文的最大长度不超过 264 位，产生的输出是一个 160 位的报文摘要。输入是按 512 位的分组进行处理的。SHA-1 是不可逆的、防冲突，并具有良好的雪崩效应。</p>
+<p>通过散列算法可实现数字签名实现，数字签名的原理是将要传送的明文通过一种函数运算（Hash）转换成报文摘要（不同的明文对应不同的报文摘要），报文摘要加密后与明文一起传送给接受方，接受方将接受的明文产生新的报文摘要与发送方的发来报文摘要解密比较，比较结果一致表示明文未被改动，如果不一致表示明文已被篡改。</p>
+<h4 id="4-3-SHA-1-与-MD5-的比较"><a href="#4-3-SHA-1-与-MD5-的比较" class="headerlink" title="4.3 SHA-1 与 MD5 的比较"></a>4.3 SHA-1 与 MD5 的比较</h4><hr>
+<p>因为二者均由 MD4 导出，SHA-1 和 MD5 彼此很相似。相应的，他们的强度和其他特性也是相似，但还有以下几点不同：</p>
+<ul>
+<li><strong>对强行供给的安全性</strong>：最显著和最重要的区别是 SHA-1 摘要比 MD5 摘要长 32 位。使用强行技术，产生任何一个报文使其摘要等于给定报摘要的难度对 MD5 是 2128 数量级的操作，而对 SHA-1 则是 2160 数量级的操作。这样，SHA-1 对强行攻击有更大的强度；</li>
+<li><strong>对密码分析的安全性</strong>：由于 MD5 的设计，易受密码分析的攻击，SHA-1 显得不易受这样的攻击；</li>
+<li><strong>速度</strong>：在相同的硬件上，SHA-1 的运行速度比 MD5 慢。</li>
+</ul>
+<h3 id="0x05-加密货币加密算法"><a href="#0x05-加密货币加密算法" class="headerlink" title="0x05 加密货币加密算法"></a>0x05 加密货币加密算法</h3><hr>
+<p>笔者根据 <a href="https://zh.wikipedia.org/wiki/加密電子貨幣列表" target="_blank" rel="noopener">加密电子货币列表</a> 整理了如下的加密算法：</p>
+<ul>
+<li><strong>SHA-256</strong>：Bitcoins、Peercoin、Namecoin</li>
+<li><strong>scrypt</strong>：Litecoins、Feathercoin、Novacoin、Dogecoin</li>
+<li><strong>scrypt-cacha</strong>：Yacoin、Ethereum Classic</li>
+<li><strong>ETHASH</strong>：Ethereum</li>
+<li><strong>ECDSA</strong>：Ripple</li>
+<li><strong>X11</strong>：DASH</li>
+</ul>
+<h4 id="5-1-SHA-256"><a href="#5-1-SHA-256" class="headerlink" title="5.1 SHA-256"></a>5.1 SHA-256</h4><hr>
+<p><strong>安全散列算法（英语：Secure Hash Algorithm，缩写为 SHA）是一个密码散列函数家族，是 FIPS 所认证的安全散列算法</strong>。能计算出一个数字消息所对应到的，长度固定的字符串（又称消息摘要）的算法。且若输入的消息不同，它们对应到不同字符串的机率很高。[5]</p>
+<p>SHA 家族包含 SHA-0、SHA-1、SHA-2、SHA-3，由于比特币白皮书 2008 年才发布，彼时 SHA-3 还未问世，所以比特币采用的是 SHA-2 家族的 <strong>SHA-256 加密算法</strong>。</p>
+<p>SHA-256 算法使用了一组 6 个逻辑函数及一组常数 KT  , 采用 512 比特的消息块，每一个消息块 Xi 分成 16 个 32 比特的字 M0, M1…M15。Hash 函数的安全性很大程度上取决于抗强碰撞的能力，即攻击者找出两个涓息 M 和 MtM≠Mt，使得 H(M)=HMt  , 因此，评价一个 Hash 函数的安全性，就是看攻击者在现有的条件下，是否可以找到该函数的一对碰撞。目前已有的对 Hash 函数攻击的方法包括生日攻击、彩虹表攻击、差分攻击等。[6]</p>
+<h4 id="5-2-scrypt"><a href="#5-2-scrypt" class="headerlink" title="5.2 scrypt"></a>5.2 scrypt</h4><hr>
+<p>scrypt 是由著名的 FreeBSD 黑客 Colin Percival 为他的备份服务 <strong>Tarsnap</strong> 开发的。刚开始只是用于防止网络攻击用的，但是后来逐渐延用到虚拟货币的技术上。</p>
+<p>scrypt 加密算法不仅计算所需时间长，而且占用的内存也多，使得并行计算多个摘要异常困难，因此利用 rainbow table 进行暴力攻击更加困难。scrypt 没有在生产环境中大规模应用，并且缺乏仔细的审察和广泛的函数库支持。但是，scrypt 在算法层面只要没有破绽，它的安全性应该高于 PBKDF2 和 bcrypt。并且以特币将 scrypt 算法用于挖矿算法中，将 scrypt 算法的优势充分发挥出来。[7]</p>
+<h4 id="5-3-ETHASH"><a href="#5-3-ETHASH" class="headerlink" title="5.3 ETHASH"></a>5.3 ETHASH</h4><hr>
+<p><strong>Ethash（之前被称为 Dagger-Hashimoto），是基于一个大的、瞬时的、任意生成的、形成 DAG（Dagger-part）的资料组规定，尝试解决它一个特定的约束，部分通过区块标题散列来决定。</strong></p>
+<p>它被设计用于在一个只有慢 CPU 的环境中来散列快速验证时间，但在被提供大量高带宽内存时，为挖矿提供大量的加速。大量内存需求意味着大规模矿工获得相对少的超线性利益。高带宽需求意味着从堆在很多超速处理单元、分享同样内存的加速在每个单独的单元给出很少的利益。[8]</p>
+<h4 id="5-4-ECDSA"><a href="#5-4-ECDSA" class="headerlink" title="5.4 ECDSA"></a>5.4 ECDSA</h4><hr>
+<p>椭圆曲线数字签名算法（ECDSA）是使用椭圆曲线密码（ECC）对数字签名算法（DSA）的模拟。ECDSA 于 1999 年成为 ANSI 标准，并于 2000 年成为 IEEE 和 NIST 标准。它在 1998 年既已为 ISO 所接受，并且包含它的其他一些标准亦在 ISO 的考虑之中。与普通的离散对数问题（discrete logarithm problem  DLP）和大数分解问题（integer factorization problem  IFP）不同，椭圆曲线离散对数问题（elliptic curve discrete logarithm problem  ECDLP）没有亚指数时间的解决方法。因此椭圆曲线密码的单位比特强度要高于其他公钥体制。[9]</p>
+<h4 id="5-5-X11"><a href="#5-5-X11" class="headerlink" title="5.5 X11"></a>5.5 X11</h4><hr>
+<p>X11 是由达世币核心研发者 <strong>Evan Duffield</strong> 发明，并得到广泛应用的哈希算法。它的链式哈希算法运用了一系列共 11 个科学哈希算法，作为工作量证明。这样不仅确保了信息处理分配的公正，还保留了比特币原有的特性。不过，与之适配的专用集成电路的制造难度更大，生产时间甚至长达数年。[10]</p>
+<p>借助链式哈希，高端 CPU 的平均转速达到了与 GPU 相似的水平。此外，这种算法的另一个好处是，与 Scrypt 相比，链式哈希算法下的 GPU 耗电量减少了 30%，温度降低了 30-50%。</p>
+<p>X11 是一种链式工作量证明 (PoW) 算法。2014 年 1 月 18 日，它被首次应用在暗黑币上。这种算法受到 Quark 链式哈希算法的启发，在其基础上进行了深度和复杂度的拓展。此外，它与 Quark 算法的不同点在于：X11 哈希算法的回合数量是预先确定的，而不是像 Quark 那样随机选定。</p>
+<p>X11 采用了 11 轮哈希算法，包括 blake, bmw, groestl, jh, keccak, skein, luffa, cubehash, shavite, simd 和 echo。这使得它成为现代加密数字货币中最安全和最复杂的算法之一。</p>
+<p>X11 的优势在于：</p>
+<ul>
+<li>增强货币的隐秘性和安全性</li>
+<li>专用集成电路阻力</li>
+<li>机枪池阻力</li>
+<li>均衡发展的 CPU 和 GPU 挖矿</li>
+<li>减少图形处理器能耗和热量输出</li>
+</ul>
+<h3 id="0x06-小结"><a href="#0x06-小结" class="headerlink" title="0x06 小结"></a>0x06 小结</h3><hr>
+<p>加密技术是加密货币的核心支撑。本文首先介绍了密码学，然后介绍加密算法的分类，接着列举了常见的对称加密算法和非对称加密算法，然后讲解了加密货币使用的加密算法。我们可以看到，加密货币使用的加密算法有别于传统的加密算法，基本上会在传统的加密算法基础上做改进。</p>
+<p><strong>对于个人而言，需要了解的是，密码越复杂，被破解的难度越高，概率越低。</strong> 之前笔者所写的 <a href="https://dbarobin.com/2017/12/18/blockchain-security-notice/" target="_blank" rel="noopener">区块链资产安全攻略</a> 一文中提到，需要设置访问密码的钱包，建议设置至少 64 位的密码，笔者设置了 128 位，并且包含大写字母、小写字母、数字和特殊符号。笔者使用 Python 编写了一个生成随机密码的脚本，本地运行，生成密码的数据字典是 abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 \<br>!#$%&amp;’()*+,-./:;&lt;=&gt;?@[]^_`{|}~。此条密码策略，重要交易所账号同样适用。</p>
+<p><strong>理解加密技术对理解加密数字货币会有很大的帮助，后续笔者再根据不同的加密算法做深入探讨。</strong></p>
+<h3 id="0x07-参考"><a href="#0x07-参考" class="headerlink" title="0x07 参考"></a>0x07 参考</h3><hr>
+<ul>
+<li>[1] 维基百科 (2004-03-22). 密码学. Retrieved from <a href="https://zh.wikipedia.org/wiki/密码学" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/密码学</a>.</li>
+<li>[2] CSDN (2012-05-11). 常见加密算法分, 用途, 原理以及比较. Retrieved from <a href="http://blog.csdn.net/zuiyuezhou888/article/details/7557048" target="_blank" rel="noopener">http://blog.csdn.net/zuiyuezhou888/article/details/7557048</a>.</li>
+<li>[3] 维基百科 (2004-07-02). RSA 加密算法. Retrieved from <a href="https://zh.wikipedia.org/wiki/RSA加密演算法" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/RSA加密演算法</a>.</li>
+<li>[4] 维基百科 (2005-11-17). 椭圆曲线密码学. Retrieved from <a href="https://zh.wikipedia.org/wiki/椭圆曲线密码学" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/椭圆曲线密码学</a>.</li>
+<li>[5] 维基百科 (2004-08-25). SHA 家族. Retrieved from <a href="https://zh.wikipedia.org/wiki/SHA家族" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/SHA家族</a>.</li>
+<li>[6] 夏冰加密软件技术博客 (2017-06-09). 简述 SHA-256 算法的安全性. Retrieved from <a href="http://www.jiamisoft.com/blog/21631-sha2.html" target="_blank" rel="noopener">http://www.jiamisoft.com/blog/21631-sha2.html</a>.</li>
+<li>[7] 夏冰加密软件技术博客 (2018-01-02). 浅析以特币的 scrypt 加密算法. Retrieved from <a href="http://www.jiamisoft.com/blog/22697-scrypt.html" target="_blank" rel="noopener">http://www.jiamisoft.com/blog/22697-scrypt.html</a>.</li>
+<li>[8] 汪晓明对区块链、以太坊的思考 (2016-07-11). 以太坊连载（18）：什么是挖矿和 Ethash 算法？. Retrieved from <a href="http://wangxiaoming.com/blog/2016/07/11/e18/" target="_blank" rel="noopener">http://wangxiaoming.com/blog/2016/07/11/e18/</a>.</li>
+<li>[9] 巴比特 (2013-10-01). 什么是椭圆曲线数字签名算法（ECDSA）？. Retrieved from <a href="http://8btc.com/article-140-1.html" target="_blank" rel="noopener">http://8btc.com/article-140-1.html</a>.</li>
+<li>[10] dashpay (2016-10-15). X11 算法. Retrieved from <a href="https://dashpay.atlassian.net/wiki/spaces/DOCCHN/pages/75530357/X11" target="_blank" rel="noopener">https://dashpay.atlassian.net/wiki/spaces/DOCCHN/pages/75530357/X11</a>.</li>
+</ul>
+<p>「区块链技术指北」同名 <strong>知识星球</strong>，二维码如下，欢迎加入。BTW，<strong>李笑来老师也加入了</strong>。</p>
+<p><img src="https://i.imgur.com/pQxlDqF.jpg" alt="区块链技术指北"></p>
+<p>「区块链技术指北」相关资讯渠道：</p>
+<ul>
+<li>「区块链技术指北」同名知识星球，<a href="https://t.xiaomiquan.com/ZRbmaU3" target="_blank" rel="noopener">https://t.xiaomiquan.com/ZRbmaU3</a></li>
+<li>官方社区，<a href="https://bbs.chainon.io" target="_blank" rel="noopener">https://bbs.chainon.io</a></li>
+<li>Telegram Channel，<a href="https://t.me/BlockchainAge" target="_blank" rel="noopener">https://t.me/BlockchainAge</a></li>
+<li>Telegram Group，<a href="https://t.me/bcage" target="_blank" rel="noopener">https://t.me/bcage</a></li>
+<li>Twitter，<a href="https://twitter.com/bcageone" target="_blank" rel="noopener">https://twitter.com/bcageone</a></li>
+<li>新浪微博，<a href="https://weibo.com/BlockchainAge" target="_blank" rel="noopener">https://weibo.com/BlockchainAge</a></li>
+</ul>
+<p>同时，本系列文章会在以下渠道同步更新，欢迎关注：</p>
+<ul>
+<li>「区块链技术指北」同名微信公众号（微信号：BlockchainAge）</li>
+<li>个人博客，<a href="https://dbarobin.com" target="_blank" rel="noopener">https://dbarobin.com</a></li>
+<li>知乎，<a href="https://zhuanlan.zhihu.com/robinwen" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/robinwen</a></li>
+<li>Steemit，<a href="https://steemit.com/@robinwen" target="_blank" rel="noopener">https://steemit.com/@robinwen</a></li>
+<li>Medium，<a href="https://medium.com/@robinwan" target="_blank" rel="noopener">https://medium.com/@robinwan</a></li>
+<li>掘金，<a href="https://juejin.im/user/5673ccae60b2260ee435f89a/posts" target="_blank" rel="noopener">robinwen@juejin.im</a></li>
+<li>币乎，<a href="https://bihu.com/people/12109" target="_blank" rel="noopener">https://bihu.com/people/12109</a></li>
+</ul>
+<p>原创不易，读者可以通过如下途径打赏，虚拟货币、美元、法币均支持。</p>
+<ul>
+<li>BTC: 3QboL2k5HfKjKDrEYtQAKubWCjx9CX7i8f</li>
+<li>ERC20 Token: 0x8907B2ed72A1E2D283c04613536Fac4270C9F0b3</li>
+<li>PayPal: <a href="https://www.paypal.me/robinwen" target="_blank" rel="noopener">https://www.paypal.me/robinwen</a></li>
+<li>微信打赏二维码</li>
+</ul>
+<p><img src="https://i.imgur.com/SzoNl5b.jpg" alt="Wechat"></p>
+<p>–EOF–</p>
+<p>版权声明：<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener">自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: 'f5d48c610cdf262e4f5c',
+            clientSecret: '52171aebeb6b254d1d599a10c411a3855650f4d2',
+            repo: 'BlockchainOne.github.io',
+            owner: 'BlockchainOne',
+            admin: ['dbarobin'],
+			id: md5(location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/01/21/chainone-wechat-issue-6/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/01/14/chainone-wechat-issue-5/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+
+            <!-- ad start -->
+            
+            <!-- ad end -->
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="ChainONE's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        chainone.org@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="chainone.org@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">二月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">16</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Blockchain/">Blockchain<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/EOS/">EOS<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/WeChat/">WeChat<span class="sidebar_archives-count">128</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">168</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/bcageone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/BlockchainAge" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/BlockchainOne" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://zhuanlan.zhihu.com/robinwen" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/chainone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>区块链技术指北 | ChainONE 官方博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?d+XW6aNuIPgOn1iA7NnB4g==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',false);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+   
+                    <!-- Google Ad -->
+                </main>
+            </div>
+        </body>
+    
+</html>

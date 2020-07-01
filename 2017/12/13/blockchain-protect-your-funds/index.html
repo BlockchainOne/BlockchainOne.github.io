@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            「译」保护你的个人资产 | 
+        
+        区块链技术指北 | ChainONE 官方博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" href="/img/favicon.ico">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="本文翻译来自 MyEtherWallet 官网文章 Protecting Yourself and Your Funds。本文提出了 20 点建议，比如购买 Ledger 或者 TREZOR 硬件钱包；为你的加密货币网站添加书签；安装 EAL Chrome 浏览器扩展程序或者 MetaMask Chrome 浏览器扩展程序，以便在进入加密货币钓鱼链接时发出警告；本地/离线使用 MEW；不要相信通过私信发送的消息、地址或者链接。始终验证信息是否是二手的；为所有的加密货币服务开启 Google 二次验证等。如果安全没有做到位，再多的资产都会化为乌有，这种基础工作，务必用心。">
+    <meta name="keywords" content="区块链, ChainONE,Blockchain,Security">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="msapplication-starturl" content="https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel="alternate" type="application/atom+xml" href="atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="「译」保护你的个人资产 | 区块链技术指北 | ChainONE 官方博客">
+    <meta property="og:image" content="/img/favicon.ico">
+    <meta property="og:description" content="本文翻译来自 MyEtherWallet 官网文章 Protecting Yourself and Your Funds。本文提出了 20 点建议，比如购买 Ledger 或者 TREZOR 硬件钱包；为你的加密货币网站添加书签；安装 EAL Chrome 浏览器扩展程序或者 MetaMask Chrome 浏览器扩展程序，以便在进入加密货币钓鱼链接时发出警告；本地/离线使用 MEW；不要相信通过私信发送的消息、地址或者链接。始终验证信息是否是二手的；为所有的加密货币服务开启 Google 二次验证等。如果安全没有做到位，再多的资产都会化为乌有，这种基础工作，务必用心。">
+    <meta property="og:article:tag" content="Blockchain"> <meta property="og:article:tag" content="Security"> 
+
+    
+        <meta property="article:published_time" content="Wed Dec 13 2017 22:22:22 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 23 2020 22:56:52 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/index.html",
+    "headline": "「译」保护你的个人资产",
+    "datePublished": "Wed Dec 13 2017 22:22:22 GMT+0800",
+    "dateModified": "Tue Jun 23 2020 22:56:52 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "ChainONE",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Empower Blockchain."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "区块链技术指北 | ChainONE 官方博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.ico"
+        }
+    },
+    "keywords": ",Blockchain,Security区块链, ChainONE",
+    "description": "本文翻译来自 MyEtherWallet 官网文章 Protecting Yourself and Your Funds。本文提出了 20 点建议，比如购买 Ledger 或者 TREZOR 硬件钱包；为你的加密货币网站添加书签；安装 EAL Chrome 浏览器扩展程序或者 MetaMask Chrome 浏览器扩展程序，以便在进入加密货币钓鱼链接时发出警告；本地/离线使用 MEW；不要相信通过私信发送的消息、地址或者链接。始终验证信息是否是二手的；为所有的加密货币服务开启 Google 二次验证等。如果安全没有做到位，再多的资产都会化为乌有，这种基础工作，务必用心。",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57297247-2', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                「译」保护你的个人资产
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ChainONE</strong>
+        <span>12月 13, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACz0lEQVR42u3aQXLCMAwF0Nz/0u0BWuBLMkywn1dMGxw9s9BI8vVz5LqwsbGxsbGxsbGxb8m+4vVi0z9PPvpL8t/8XXnM2NjY2Huzk9dMqPkh/hNu8JdoH2xsbOwD2I+Cqz6TH9Zkh/Ju2NjY2NgPUtSkbKhGgo2NjY39vgT2fM9qoZJQsbGxsbF7DZo8xEmKyvf5UC8NGxsb+/bsfGh6n88fnW9jY2Nj35hdXfklm15qTBJYM3JsbGzsTdmTFk91hJCPfquNregyEDY2NvbB7KQR//xoeoOEF02iYsLDxsbG3pWdpKVq8qimrvzSTzUqbGxs7DPZkyFrcgSrhsHlhIeNjY29Nfsarx6m11pqNsKwsbGxt2b3Ekw1pfVKiN57m/NtbGxs7C9kV1NCb2xQHR5MDitKYNjY2NgbsfOW/Xwomx/lvO2FjY2NfQ47b9xMEsyqQ3ke24uiCBsbG3tTdrXJXk0wVd6qHwMbGxv7HHby5eefe8PXZBgwKVeiUgQbGxt7I3Z1oJsEke9Q3a35dmxsbOyt2XkymASajB/yAfCCXho2Njb2FuxJQZKPXXuj2erP86JEwcbGxt6UnYfbSzPVyz3V9Nm8fImNjY29HbtaZlTTT3UY3BtLYGNjY5/JnieM/MjydFUdA0cHio2Njb0pu/zlIJQkuOrgIU91zaYSNjY29pez8/b9JEXlzf1q82hZUwkbGxt7I/b8CHpjhmScnA82sLGxsbHz1n+1gOk1jJJjGpUi2NjY2F/IXls2zJv+eaKqjpmxsbGxd2Vf8VpLrV7HWXCVBxsbG3trdrXMqI5de9+aJDBsbGzsM9nNS43FyzfJUV7FtbiXho2NjX0Mu/fkPAX2xr3Y2NjY2OXXDK715E3/wrFiY2NjH8B+x3A3D7f3ZFLqYGNjY5/A7jVu8vJg1RWc3qVMbGxs7L3Z5yxsbGxsbGxsbGzs26xfNzXsb52NgfMAAAAASUVORK5CYII=">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Blockchain/">Blockchain</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Security/">Security</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=「译」保护你的个人资产&url=https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/index.html&pic=https://blog.chainon.io/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=「译」保护你的个人资产&url=https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/index.html&via=ChainONE" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/index.html&title=「译」保护你的个人资产" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=区块链技术指北 | ChainONE 官方博客&title=「译」保护你的个人资产&summary=ChainONE, Empower Blockchain. 区块链技术指北，构建优质社区，传播和分享区块链技术，探讨潜在价值，连接技术和商业。&pics=https://blog.chainon.io/img/favicon.ico&url=https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.chainon.io/2017/12/13/blockchain-protect-your-funds/index.html&text=「译」保护你的个人资产" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>本文翻译来自 MyEtherWallet 官网文章 Protecting Yourself and Your Funds。本文提出了 20 点建议，比如购买 Ledger 或者 TREZOR 硬件钱包；为你的加密货币网站添加书签；安装 EAL Chrome 浏览器扩展程序或者 MetaMask Chrome 浏览器扩展程序，以便在进入加密货币钓鱼链接时发出警告；本地/离线使用 MEW；不要相信通过私信发送的消息、地址或者链接。始终验证信息是否是二手的；为所有的加密货币服务开启 Google 二次验证等。如果安全没有做到位，再多的资产都会化为乌有，这种基础工作，务必用心。<br><a id="more"></a></p>
+<p><code>文/温国兵</code></p>
+<blockquote>
+<p>本文由币乎社区（bihu.com）内容支持计划奖励。</p>
+</blockquote>
+<p>这是「区块链技术指北」的第 6 篇文章。</p>
+<blockquote>
+<p>如果对我感兴趣，想和我交流，我的微信号：<strong>Wentasy</strong>，加我时简单介绍下自己，并注明来自「区块链技术指北」。同时我会把你拉入微信群「区块链技术指北」。BTW，李笑来老师也加入了我的知识星球，文末有加入方式。</p>
+</blockquote>
+<p>本文翻译来自 MyEtherWallet 官网文章 <a href="https://myetherwallet.github.io/knowledge-base/getting-started/protecting-yourself-and-your-funds.html" target="_blank" rel="noopener">Protecting Yourself and Your Funds</a>。</p>
+<p><img src="https://i.imgur.com/TVdszJY.png" alt="Bitcoin software wallets and security"></p>
+<blockquote>
+<p>题图来自: © cctrading / Bitcoin software wallets and security / cctrading.biz</p>
+</blockquote>
+<p><strong>1、购买 Ledger 或者 TREZOR 硬件钱包。</strong></p>
+<p>存储 ETH、代币、ETC、BTC 和其他虚拟货币最安全最便捷的方式之一就是使用 Ledger Nano S 或者 TREZOR。他们都是硬件钱包，都能和 MyEtherWallet.com 协同使用，而且价格都低于 $100（ &lt;0.5 ETH）。</p>
+<blockquote>
+<p>译者注：现在 &lt;0.5 ETH 的衡量标准已经过时了，区块链世界变化太快。</p>
+</blockquote>
+<ul>
+<li><a href="https://www.ledgerwallet.com/r/fa4b?path=/products/" target="_blank" rel="noopener">购买 Ledger Nano S</a></li>
+<li><a href="https://trezor.io/?a=myetherwallet.com" target="_blank" rel="noopener">购买 TREZOR</a></li>
+</ul>
+<p>如果你不想要这些俏皮的设备，使用 <a href="https://myetherwallet.github.io/knowledge-base/offline/ethereum-cold-storage-with-myetherwallet.html" target="_blank" rel="noopener">冷存储</a> 来存储大多数资产。请务必这样做。</p>
+<p><strong>2、为你的加密货币网站添加书签。</strong></p>
+<p>使用且仅使用这些书签里的网站。</p>
+<p><strong>3、安装 <a href="https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn" target="_blank" rel="noopener">EAL Chrome 浏览器扩展程序</a> 或者 <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank" rel="noopener">MetaMask Chrome 浏览器扩展程序</a></strong>，以便在进入加密货币钓鱼链接时发出警告。</p>
+<p><strong>4、<a href="https://myetherwallet.github.io/knowledge-base/offline/running-myetherwallet-locally.html" target="_blank" rel="noopener">本地/离线使用 MEW</a></strong>。</p>
+<p><strong>5、不要相信通过私信发送的消息、地址或者链接。始终验证信息是否是二手的。</strong></p>
+<ul>
+<li>不要点击任何关于加密货币、钱、银行或者类似 Dropbox、Google Drive、Gmail 等服务提供的链接。</li>
+<li>如果这个网站骗局点击诱饵对您来说太简单了，不要在页面上输入任何信息。</li>
+<li>切勿通过私信发送给您的网站上输入私钥，密码和敏感数据。</li>
+</ul>
+<p><strong>6、为所有的加密货币服务开启 Google 二次验证。</strong></p>
+<ul>
+<li>现在就去做，停止编造借口！优先选择 Google Authenticator 而不是 Authy。不要使用你的电话号码。然后，确认你的电脑号码没有绑定到你的 Google 账户（在隐私设置里查看）。如果绑定了，你和你永远的朋友黑客先生可以通过绑定的手机号恢复访问你的账户，完全摧毁你的 Google 二次验证服务。</li>
+<li>附言：MyEtherWallet 是一个客户端，意味着在我们的应用场景下， Google 二次验证不能做任何事情。Google 二次验证保证的是存储在服务端的密码安全。</li>
+<li>再附：不要忘记为这些 Google 二次验证的资料做冷备。如果手机不幸落水，这将痛苦至极，然后你的生活会被恢复账户这些麻烦事打乱。</li>
+</ul>
+<p><strong>7、给代币预售：不要相信除了官网公布之外的任何地址。</strong></p>
+<ul>
+<li>在预售之前添加网站的链接，在购买时从书签保存的链接中获取地址。不要相信任何其他的来源（特别是 Slack 上的随机机器人）。备注：代币预售什么时候开始使用 ENS 名称？</li>
+</ul>
+<blockquote>
+<p>译者注：ENS，EthereumName Service，通过 ENS 独有的竞标机制，任何以太币的拥有者都可以方便的为自己的以太坊地址注册一个以 .eth 结尾的以太坊域名。 ENS 拥有一个独特的注册流程，允许任何人通过竞价流程方便的注册一个以 .eth 结尾的域名。</p>
+</blockquote>
+<p><strong>8、二次检查链接和三重检查 Github 网址。</strong></p>
+<ul>
+<li>检查网址，然后在输入任何信息之前再次检查。这个流程是非常重要的，特别是任何需要提供用户名、密码、邮箱地址、私钥和任何其他个人信息的网址。SSL 证书并不意味着这个网站是可信的，仅仅表示他们购买了 SSL 证书。不确定哪一个才是正确的网址？这样做，交叉引用 Reddit、Twitter、Github、Slack 和这个项目混迹的任何地方。</li>
+<li>GitHub 网址更容易伪造和混淆。不要在 reddit 找到随机链接然后去下载，自己去寻找正确的网址。在 Twitter 上关注这些项目的开发者，在 reddit 上添加好友（大笑……但是认真地说，这很好分辨，因为他们的名字会以橙色显示），或者给这些 GitHub 项目加星。</li>
+</ul>
+<p><strong>9、始终验证您访问的网站是合法的。</strong></p>
+<ul>
+<li>特别是在这种场景，你将要输入你的私钥或者下载应用程序。什么是合法的？人们用了相当长的一段时间，取得了良好的效果。如果这个链接在上周才注册或者这个网站“刚刚启动”，请谨慎行事，避免使用这个网站一段时间。</li>
+</ul>
+<p><strong>10、使用 “scam” 或者 “reviews” 关键字配合服务名称来进行 Google 搜索。</strong></p>
+<p>通常诈骗网站活不长。通过任意博客上由真人的评论来验证是否正确。不要用单一来源来评估信息。需要明白合法的服务在相当长的时间里会集合积极和消极的评论。诈骗网站通常没有人谈论它，大家都在嚷嚷他们是如何被抢劫的，或者会发现有史以来最完美的评论。后者就像是前者的接力手一样。</p>
+<p><strong>11、坚决不要运行远程控制软件（比如 TeamViewer）。</strong></p>
+<p>坚决不要……尤其是有私钥的电脑。这些程序中的安全漏洞数量非常大。你用 Google 二次验证来保护你的一生，但让亲近的人有权限访问你的计算机或者你的账户。</p>
+<p><strong>12、不要使用脑钱包。</strong></p>
+<p>脑钱包是一种私钥是从您选择的单词或短语派生的。人类大脑没有能力产生高熵的种子。使用你自己产生的短语，即使类似 “rare” 或 “random”，也不像使用 MyEtherWallet 的随机生成那样安全，而且这些短语可能被数百万次的暴力破解。阅读 <a href="https://arstechnica.com/information-technology/2013/10/how-the-bible-and-youtube-are-fueling-the-next-frontier-of-password-cracking/" target="_blank" rel="noopener">更多</a>，<a href="https://arstechnica.com/information-technology/2016/02/password-cracking-attacks-on-bitcoin-wallets-net-103000/" target="_blank" rel="noopener">还有更多</a>。</p>
+<p><strong>13、安装 adblocker 来关闭 Google 或者 Bing 的公告。</strong></p>
+<p>我推荐使用 <a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="noopener">uBlock Orgin</a>。如果你正在使用 Adblock Plus，它不会为你屏蔽 Google 广告。进入 Adblock Plus 设置，然后取消 <strong>“允许部分非侵入式广告”</strong> 复选框。</p>
+<p><strong>14、不要点击广告</strong></p>
+<p>不管是否安装 adblocker，你都不应该也绝不应该点击广告。</p>
+<p><strong>15、如果您意外访问或键入了恶意网站，请清除最近的历史记录和自动填充功能。</strong></p>
+<p>这将阻止你输入 kra… 但自动填充为恶意网站 krakken.com。</p>
+<p><strong>16、没有人会给你免费或者折扣的 ETH。</strong></p>
+<p>甚至完成一个调查之后。;)</p>
+<p><strong>17、刚刚完成他们的代币预售的家伙不会通过 Slack 的直接留言来销售他们的代币。</strong></p>
+<p>即使有 125 像素 * 125 像素的 smokin 火热头像也不会。</p>
+<p><strong>18、<a href="https://chrome.google.com/webstore/detail/myetherwallet/nlbmnnijcnlegkjjpcfjclmcfggfefdm?hl=en" target="_blank" rel="noopener">下载 MEW Chrome 浏览器扩展程序。</a></strong></p>
+<p><strong>19、仅在你发起交易的时候解锁你的钱包。</strong>只通过 <a href="https://etherscan.io/" target="_blank" rel="noopener">https://etherscan.io/</a> 和 <a href="https://ethplorer.io/" target="_blank" rel="noopener">https://ethplorer.io/</a> 检查余额。</p>
+<p><strong>20、最后：多动脑思考。</strong></p>
+<p>多想想，如果不确定，问。不要盲目跟风随从，质问自己。如果某件事看起来不对劲……如果你觉得自己是地球上最幸运的笨蛋……或者如果你发现自己问“我想知道为什么我还没有在 Reddit 上看到这个”，有可能是有原因的。</p>
+<p><strong>翻译后注</strong></p>
+<p>如果安全没有做到位，再多的资产都会化为乌有，这种基础工作，务必用心。</p>
+<p>「区块链技术指北」同名 <strong>知识星球</strong>，二维码如下，欢迎加入。BTW，<strong>李笑来老师也加入了</strong>。</p>
+<p><img src="https://i.imgur.com/pQxlDqF.jpg" alt="区块链技术指北"></p>
+<p>「区块链技术指北」相关资讯渠道：</p>
+<ul>
+<li>「区块链技术指北」同名知识星球，<a href="https://t.xiaomiquan.com/ZRbmaU3" target="_blank" rel="noopener">https://t.xiaomiquan.com/ZRbmaU3</a></li>
+<li>官方社区，<a href="https://bbs.chainon.io" target="_blank" rel="noopener">https://bbs.chainon.io</a></li>
+<li>Telegram Channel，<a href="https://t.me/BlockchainAge" target="_blank" rel="noopener">https://t.me/BlockchainAge</a></li>
+<li>Telegram Group，<a href="https://t.me/bcage" target="_blank" rel="noopener">https://t.me/bcage</a></li>
+<li>Twitter，<a href="https://twitter.com/bcageone" target="_blank" rel="noopener">https://twitter.com/bcageone</a></li>
+<li>新浪微博，<a href="https://weibo.com/BlockchainAge" target="_blank" rel="noopener">https://weibo.com/BlockchainAge</a></li>
+</ul>
+<p>同时，本系列文章会在以下渠道同步更新，欢迎关注：</p>
+<ul>
+<li>「区块链技术指北」同名微信公众号（微信号：BlockchainAge）</li>
+<li>个人博客，<a href="https://dbarobin.com" target="_blank" rel="noopener">https://dbarobin.com</a></li>
+<li>知乎，<a href="https://zhuanlan.zhihu.com/robinwen" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/robinwen</a></li>
+<li>Steemit，<a href="https://steemit.com/@robinwen" target="_blank" rel="noopener">https://steemit.com/@robinwen</a></li>
+<li>Medium，<a href="https://medium.com/@robinwan" target="_blank" rel="noopener">https://medium.com/@robinwan</a></li>
+<li>掘金，<a href="https://juejin.im/user/5673ccae60b2260ee435f89a/posts" target="_blank" rel="noopener">robinwen@juejin.im</a></li>
+<li>币乎，<a href="https://bihu.com/people/12109" target="_blank" rel="noopener">https://bihu.com/people/12109</a></li>
+</ul>
+<p>原创不易，读者可以通过如下途径打赏，虚拟货币、美元、法币均支持。</p>
+<ul>
+<li>BTC: 3QboL2k5HfKjKDrEYtQAKubWCjx9CX7i8f</li>
+<li>ERC20 Token: 0x8907B2ed72A1E2D283c04613536Fac4270C9F0b3</li>
+<li>PayPal: <a href="https://www.paypal.me/robinwen" target="_blank" rel="noopener">https://www.paypal.me/robinwen</a></li>
+<li>微信打赏二维码</li>
+</ul>
+<p><img src="https://i.imgur.com/SzoNl5b.jpg" alt="Wechat"></p>
+<p>–EOF–</p>
+<p>版权声明：<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener">自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: 'f5d48c610cdf262e4f5c',
+            clientSecret: '52171aebeb6b254d1d599a10c411a3855650f4d2',
+            repo: 'BlockchainOne.github.io',
+            owner: 'BlockchainOne',
+            admin: ['dbarobin'],
+			id: md5(location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/12/14/blockchain-count-my-cryptocurrency/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/11/blockchain-add-custom-token-key/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+
+            <!-- ad start -->
+            
+            <!-- ad end -->
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="ChainONE's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        chainone.org@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="chainone.org@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">二月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">16</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Blockchain/">Blockchain<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/EOS/">EOS<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/WeChat/">WeChat<span class="sidebar_archives-count">128</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">168</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/bcageone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/BlockchainAge" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/BlockchainOne" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://zhuanlan.zhihu.com/robinwen" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/chainone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>区块链技术指北 | ChainONE 官方博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?d+XW6aNuIPgOn1iA7NnB4g==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',false);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+   
+                    <!-- Google Ad -->
+                </main>
+            </div>
+        </body>
+    
+</html>

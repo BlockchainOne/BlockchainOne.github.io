@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            让你的以太坊 DApps 盈利的 6 种方法 | 
+        
+        区块链技术指北 | ChainONE 官方博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" href="/img/favicon.ico">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="简单说，广告商会支付给内容提供者和技术公司（你，其他开发者）钱，让他们把广告推到顾客（你的用户）面前。顾客依次被广告影响（不管他们是不是这么认为），然后在广告商的产品上花钱。在过去的 APP 市场，有 Lite，Regular 和 Pro 版本的 app。用户会试用提供给他们的产品，如果他们喜欢，则会购买完整版本的应用程序。使用该商业模式的公司，诸如 Spotify，Slack 或 Onedrive 等，通过购买付费订阅的用户来获得收入。在这个包含两部分的系列文章中，我们讨论并且实现了一些可以应用到你的 DApp 中的商业模型，当你的目标是用它盈利的时候。">
+    <meta name="keywords" content="区块链, ChainONE,Blockchain,Dapp">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="msapplication-starturl" content="https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel="alternate" type="application/atom+xml" href="atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="让你的以太坊 DApps 盈利的 6 种方法 | 区块链技术指北 | ChainONE 官方博客">
+    <meta property="og:image" content="/img/favicon.ico">
+    <meta property="og:description" content="简单说，广告商会支付给内容提供者和技术公司（你，其他开发者）钱，让他们把广告推到顾客（你的用户）面前。顾客依次被广告影响（不管他们是不是这么认为），然后在广告商的产品上花钱。在过去的 APP 市场，有 Lite，Regular 和 Pro 版本的 app。用户会试用提供给他们的产品，如果他们喜欢，则会购买完整版本的应用程序。使用该商业模式的公司，诸如 Spotify，Slack 或 Onedrive 等，通过购买付费订阅的用户来获得收入。在这个包含两部分的系列文章中，我们讨论并且实现了一些可以应用到你的 DApp 中的商业模型，当你的目标是用它盈利的时候。">
+    <meta property="og:article:tag" content="Blockchain"> <meta property="og:article:tag" content="Dapp"> 
+
+    
+        <meta property="article:published_time" content="Sun Mar 25 2018 21:22:22 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 23 2020 22:56:52 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/index.html",
+    "headline": "让你的以太坊 DApps 盈利的 6 种方法",
+    "datePublished": "Sun Mar 25 2018 21:22:22 GMT+0800",
+    "dateModified": "Tue Jun 23 2020 22:56:52 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "ChainONE",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Empower Blockchain."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "区块链技术指北 | ChainONE 官方博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.ico"
+        }
+    },
+    "keywords": ",Blockchain,Dapp区块链, ChainONE",
+    "description": "简单说，广告商会支付给内容提供者和技术公司（你，其他开发者）钱，让他们把广告推到顾客（你的用户）面前。顾客依次被广告影响（不管他们是不是这么认为），然后在广告商的产品上花钱。在过去的 APP 市场，有 Lite，Regular 和 Pro 版本的 app。用户会试用提供给他们的产品，如果他们喜欢，则会购买完整版本的应用程序。使用该商业模式的公司，诸如 Spotify，Slack 或 Onedrive 等，通过购买付费订阅的用户来获得收入。在这个包含两部分的系列文章中，我们讨论并且实现了一些可以应用到你的 DApp 中的商业模型，当你的目标是用它盈利的时候。",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57297247-2', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提取资金"><span class="post-toc-number">1.</span> <span class="post-toc-text">提取资金</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-创建一个发售-发起一个-Token"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 创建一个发售 / 发起一个 Token</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-高级功能-跳过努力"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 高级功能 / 跳过努力</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-收取一定比例的交易市场手续费"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 收取一定比例的交易市场手续费</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-订阅-会员"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4. 订阅 / 会员</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#终生会员"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">终生会员</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有时限的会员-订阅"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">有时限的会员 / 订阅</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于使用的会员-付费使用"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">基于使用的会员 / 付费使用</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结论"><span class="post-toc-number">2.</span> <span class="post-toc-text">结论</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                让你的以太坊 DApps 盈利的 6 种方法
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ChainONE</strong>
+        <span>3月 25, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACy0lEQVR42u3aQXKDQAwEQP//08kDkpCRhFNk1ZxcgGGbi0qafX2sPF7Y2NjY2NjY2NjYj2S/4uObB325+vX3T2eur/4CaK0ZGxsb+2x28prrF19/jlHh+eH55X9hY2NjL2Bfl5bkldWylzzt+nyyZmxsbGzshJ0jr8teXiCxsbGxsd9dwPKrvY+CjY2Njd0b0CQj/uqTe5/pT2dp2NjY2I9n56Hpc37/ab6NjY2N/WB2L3ZNNtxUz7w9MMbGxsY+lJ0XhmrZy5uHXuHMN4liY2Njb2DnRWISu04GUlEAcD2iwsbGxj6UXW0wqkFCb4kJuBwqYGNjY69h54Xqus2I2oNii5I/ARsbG3sPu7qp8bq1qI6Nqnf2mhxsbGzsbexe7DppV3qFqhoAY2NjY5/K7o1pXsVj0mbkRfSGDgwbGxv7H7J7hWESJCRBb3XkFI2ZsLGxsY9mV5uQ5JXz7TiTTZnY2NjYm9kJrBcJ5wWsV96wsbGxd7J7I6R7o+I87u21SdjY2Nh72L2QIAfPMfkACxsbG3snO39BYSg/3qY5Ka7Y2NjYO9nVsU6vqSgvenAVGxsb+2x2LzqtNiSTdqLazERDJWxsbOyD2L3BTa8gJUu8KzDAxsbG3sOeb6+JQtZbY93mR8fGxsY+mj0pLb1wtzfA6kUU2NjY2BvYeQHLx/TVgVFSzCZxBTY2NvYe9oSXl6s8TkiiiBuGStjY2NgHsfM2Iy85edtQbWkKb8TGxsY+lF09ksagV4R6m3sK0QU2Njb2oexJ+akWmKhhCO7MGyFsbGzsPeykaE0WmpypbgPKR1HY2NjYe9i9NqMZu8bBQDX6LbQi2NjY2Nit/1YD3fnzsbGxsbHnRau8vSbYNpSMxrCxsbG3sfNl5eOefLm9OwsjLWxsbOyj2b3BzV3BwF1hwBvzbWxsbOwHs/cc2NjY2NjY2NjY2I85PgFEOuKVsn9yYwAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Blockchain/">Blockchain</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Dapp/">Dapp</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=让你的以太坊 DApps 盈利的 6 种方法&url=https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/index.html&pic=https://blog.chainon.io/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=让你的以太坊 DApps 盈利的 6 种方法&url=https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/index.html&via=ChainONE" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/index.html&title=让你的以太坊 DApps 盈利的 6 种方法" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=区块链技术指北 | ChainONE 官方博客&title=让你的以太坊 DApps 盈利的 6 种方法&summary=ChainONE, Empower Blockchain. 区块链技术指北，构建优质社区，传播和分享区块链技术，探讨潜在价值，连接技术和商业。&pics=https://blog.chainon.io/img/favicon.ico&url=https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.chainon.io/2018/03/25/6-ways-to-monetize-your-ethereum-dapps/index.html&text=让你的以太坊 DApps 盈利的 6 种方法" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>简单说，广告商会支付给内容提供者和技术公司（你，其他开发者）钱，让他们把广告推到顾客（你的用户）面前。顾客依次被广告影响（不管他们是不是这么认为），然后在广告商的产品上花钱。在过去的 APP 市场，有 Lite，Regular 和 Pro 版本的 app。用户会试用提供给他们的产品，如果他们喜欢，则会购买完整版本的应用程序。使用该商业模式的公司，诸如 Spotify，Slack 或 Onedrive 等，通过购买付费订阅的用户来获得收入。在这个包含两部分的系列文章中，我们讨论并且实现了一些可以应用到你的 DApp 中的商业模型，当你的目标是用它盈利的时候。<br><a id="more"></a></p>
+<p>这是「区块链技术指北」的第 30 篇文章。</p>
+<blockquote>
+<p>如果对我感兴趣，想和我交流，我的微信号：<strong>Wentasy</strong>，加我时简单介绍下自己，并注明来自「区块链技术指北」。同时我会把你拉入微信群「区块链技术指北」。BTW，李笑来老师也加入了我们的知识星球，文末有加入方式。</p>
+</blockquote>
+<p>在 <a href="https://medium.com/loom-network/why-you-should-learn-to-build-blockchain-apps-be9a92e8d08e" target="_blank" rel="noopener">我（本文作者）过去的文章中</a>，我们已经说明了你为什么应该学习创建区块链分布式应用。</p>
+<p><img src="https://i.imgur.com/D6S2I5V.png" alt="6 Ways to Monetize Your Ethereum DApps"></p>
+<blockquote>
+<p>题图来自: © Georgios Konstantopoulos / 6 Ways to Monetize Your Ethereum DApps / medium.com</p>
+</blockquote>
+<p>在这篇文章中，我们将讨论你怎么将他们货币化。</p>
+<p>在讨论具体的 DApp 案例之前，让我们试着回答一个流行的问题：</p>
+<blockquote>
+<p>传统 app 怎么赚钱？</p>
+</blockquote>
+<p>简单说，广告商会支付给内容提供者和技术公司（你，其他开发者）钱，让他们把广告推到顾客（你的用户）面前。顾客依次被广告影响（不管他们是不是这么认为），然后在广告商的产品上花钱。</p>
+<p>在过去的 APP 市场，有 Lite，Regular 和 Pro 版本的 app。用户会试用提供给他们的产品，如果他们喜欢，则会购买完整版本的应用程序。</p>
+<p><img src="https://i.imgur.com/SUZR9rP.png" alt></p>
+<p>使用该商业模式的公司，诸如 Spotify，Slack 或 Onedrive 等，通过购买付费订阅的用户来获得收入。</p>
+<p>免费增值模式的其他例子还包括，允许用真实货币购买游戏内物品的游戏类应用程序。</p>
+<p>免费游戏 MMORPG 利用了所谓的 “免费限制” 方法。魔兽世界中的免费玩家，最高等级之允许为 20 级。其他游戏则对你可以探索的区域进行限制。这类游戏的最佳内容是为 “付费玩家” 游戏玩家保留的。</p>
+<blockquote>
+<p>考虑到上述情况，当 DApp 开发人员寻求将自己的 DApp 货币化时，可以着眼于很多容易解决的问题。</p>
+</blockquote>
+<p>正如 <a href="https://medium.com/loom-network/why-you-should-learn-to-build-blockchain-apps-be9a92e8d08e" target="_blank" rel="noopener">前一篇文章</a> 中所讨论的，你始终可以通过由令牌支持的众包来引导你的项目。</p>
+<p>在这种情况下，你需要定义你的令牌 [ <a href="https://medium.com/@mrdavey/good-discussion-and-question-2446e3827de2" target="_blank" rel="noopener">1</a> ] 的需求：</p>
+<ul>
+<li>你的 dapp 的核心功能 ( <a href="https://golem.network/" target="_blank" rel="noopener">Golem</a>，<a href="https://aragon.one/" target="_blank" rel="noopener">Aragon</a>，<a href="https://request.network/" target="_blank" rel="noopener">Request</a> )</li>
+<li>提供你的网络的访问权 ( <a href="https://basicattentiontoken.org/" target="_blank" rel="noopener">BAT</a>，<a href="https://hellobloom.io/" target="_blank" rel="noopener">Bloom</a> )</li>
+<li>将产品利润分配给代币持有者（TenX，Numerai）请注意，在这种情况下，你需要注意法规和 KYC 合规性，具体取决于你的代币是否被视为证券。</li>
+</ul>
+<p>Cryptokitties 从每次成功拍卖中收取 3.75％ 的费用。这被证明是一个 <a href="https://medium.com/@codetractio/a-look-into-cryptokitties-revenue-model-6466b705a998" target="_blank" rel="noopener">非常有利可图的收入模式</a>。</p>
+<p><img src="https://i.imgur.com/Z4HZHLa.png" alt></p>
+<p>上周 CK（Cryptokitties）的使用量致使交易费用陡升到 800 ETH。 来源: <a href="https://dappradar.com/" target="_blank" rel="noopener">DappRadar.com</a></p>
+<p>举个一般的例子:</p>
+<ol>
+<li><strong>A</strong> 通过你的服务从 <strong>B</strong> 买东西</li>
+<li>支付费用的 <strong>Y%</strong> 给服务提供商（你自己）  </li>
+<li>(100- <strong>Y</strong> )% 支付给 <strong>B</strong>。</li>
+</ol>
+<p>这里有一个警告。如果你向终端用户收取 “不公平” 的服务费用，那么终端用户将最后会复制你的智能合约并发布一个较低费用甚至免费的版本（考虑你的合同已经过验证且开放源代码的情况，而这也是人们对以太坊 DApps 通常期望的。</p>
+<blockquote>
+<p>找出合适的价格来向用户收费是关键；不过这篇文章里我们不会介绍定价模型。</p>
+</blockquote>
+<p>从前面讨论过的免费增值模式中激励自己 , 并拿我们在 <a href="https://cryptozombies.io/" target="_blank" rel="noopener">CryptoZombies</a> 中构建的游戏作示例，设想一下:</p>
+<p>假设你的 CryptoZombie（加密僵尸军团）需要 10 次胜利才能升级，而且随着等级的提高越来越难。</p>
+<p>从第 10 级到第 11 级的升级比从第 1 级升级到第 2 级要困难得多。 用户需要花费更多的精力来升级他们的 CryptoZombie（加密僵尸军团）。</p>
+<p><img src="https://i.imgur.com/z7Rewob.png" alt></p>
+<p>收益递减规律</p>
+<p>在这里你可以实现一个功能，它允许僵尸 “跳过” 这个努力并且直接升级，作为回报，用户需要支付一些数量的以太。</p>
+<p>这样一来，免费玩家仍然能够获得最终游戏结果，但愿意额外付费的玩家可跳过这个努力的过程。</p>
+<p>同样的情况也适用于重置僵尸的冷却时间。 僵尸通常需要在再次战斗之前等待<code>冷却时间</code>秒，但我们可以做到让用户支付一小笔费用来跳过冷却时间。</p>
+<p>在这里你有很多不同的方式来用 DApps 获利，我们将在本文的第 2 部分讨论具体实现的代码。</p>
+<p>你可以添加订阅或购买会员功能到你的合同中，这样某些功能只能被订阅者或高级会员调用。</p>
+<p>订阅服务的持续方法可以是:</p>
+<ul>
+<li><strong>基于时间长度:</strong> 用户被允许调用一个函数，直到 X 时间过去，例如，他们可以支付 1 个月的访问权限。</li>
+<li><strong>基于使用次数:</strong> 用户被允许调用 X 次函数。你可以在 <a href="https://en.wikipedia.org/wiki/Subscription_business_model" target="_blank" rel="noopener">维基百科</a> 上阅读更多关于订阅的模型。</li>
+</ul>
+<p>同样的，如何实现这些特定代码的示例将在本文章的第二部分中介绍。</p>
+<p>考虑到我们正在谈论关于 DApp 本身的广告，这是一种不太流行的方法。<a href="http://thousandetherhomepage.com/" target="_blank" rel="noopener">ThousandEtherHomepage</a> 就是如此。你可以在合约中付费认领一些阵列，这些阵列会在 DApp 的前端以像素显示出来。就像你在下图看到的，这些像素已被一些项目（包括其他类型）用于其品牌宣传。</p>
+<p><img src="https://i.imgur.com/fYNqkJi.png" alt></p>
+<p>如果上述任何内容听起来都太麻烦了，你可以随时在你的服务 / DApp 中加上你加密货币的地址，接受慷慨者的捐助。</p>
+<p>你也可以将 <a href="https://eth-button.github.io/eth-button/" target="_blank" rel="noopener">eth-button</a> 添加到你的网页上以进行 Metamask 集成。</p>
+<p><img src="https://i.imgur.com/hS3Kocb.png" alt></p>
+<p><a href="http://eth-button.github.io/eth-button" target="_blank" rel="noopener">eth-button.github.io/eth-button</a></p>
+<p>第一部分是更强调理论。第 2 部分将包含实现上述货币化想法的代码。</p>
+<p>在这两篇幅系列文章的 <a href="https://medium.com/loom-network/6-ways-to-monetize-your-ethereum-dapps-part-1-28e9bb18f87e?source=user_profile---------4-------------------" target="_blank" rel="noopener">第一部分</a></p>
+<p>我们已经有了让你的以太坊 Dapps 盈利的理论方法。在这部分，我们将会看一些代码示例，向你展示如何用 Solidity 来真正实现它们。</p>
+<h2 id="提取资金"><a href="#提取资金" class="headerlink" title="提取资金"></a>提取资金</h2><p>首先，需要一个允许提取资金到所有者地址的函数。这就和下图一样简单：<br><img src="https://i.imgur.com/yYJPN1W.png" alt></p>
+<p>这个函数将会转移调用合约的余额到 <code>owner</code> （使用最流行的 <code>onlyOwner</code> 修饰符 ）的地址。如果你不熟悉上面的关键字是如何工作的，你也许想要暂停阅读，在完成我们在 <a href="https://cryptozombies.io/" target="_blank" rel="noopener">CryptoZombies.io</a> 的课程之后再继续。</p>
+<p><strong>声明：</strong> 接下来所有的例子都已经被简化，仅用来展示如何实现所讨论的功能。我们对业务逻辑做出假设，并且当我们创建一组智能合约的时候，我们没有做任何严格的安全措施。在部署你的代码前，一定要对它们做一个全面的安全审核。</p>
+<h3 id="1-创建一个发售-发起一个-Token"><a href="#1-创建一个发售-发起一个-Token" class="headerlink" title="1. 创建一个发售 / 发起一个 Token"></a>1. 创建一个发售 / 发起一个 Token</h3><hr>
+<p>这已经在 <a href="https://ethereum.org/crowdsale" target="_blank" rel="noopener">以太坊官方网站</a> 描述过。为了创建安全的发售，建议使用 Open Zeppelin 创建的 <a href="https://github.com/OpenZeppelin/zeppelin-solidity/tree/master/contracts/crowdsale" target="_blank" rel="noopener">audited contracts</a>。</p>
+<p>你可以参考 <a href="https://blog.zeppelin.solutions/how-to-create-token-and-initial-coin-offering-contracts-using-truffle-openzeppelin-1b7a5dae99b6" target="_blank" rel="noopener">这份指南</a>，或者 <a href="https://www.youtube.com/watch?v=ShW2zQcY4LY" target="_blank" rel="noopener">这个视频</a> 来实现。</p>
+<h3 id="2-高级功能-跳过努力"><a href="#2-高级功能-跳过努力" class="headerlink" title="2. 高级功能 / 跳过努力"></a>2. 高级功能 / 跳过努力</h3><hr>
+<p><img src="https://i.imgur.com/SZ98sMV.png" alt></p>
+<p>在这里查看所有的代码: <a href="https://ethfiddle.com/O3_2o-oqaZ" target="_blank" rel="noopener">https://ethfiddle.com/O3_2o-oqaZ</a></p>
+<p>在这个例子中，我们可以看到一个用户可以通过花费 <code>1ether</code> 绕过 <code>winCount</code> 的升级要求。然后，应用所有者可调用之前讨论过的 <code>withdraw</code> 函数，来得到了他们的资金。</p>
+<p>请注意，以太币的价格也许会在将来剧烈得升高（或降低），这将会改变使用你的高级特性的花费。所以在很多情况下，添加一个允许你在未来改变花费的 <code>onlyOwner</code>函数是合理的，否则你的应用将可能变得非常昂贵。这适用于接下来所有的例子。</p>
+<h3 id="3-收取一定比例的交易市场手续费"><a href="#3-收取一定比例的交易市场手续费" class="headerlink" title="3. 收取一定比例的交易市场手续费"></a>3. 收取一定比例的交易市场手续费</h3><hr>
+<p>在这个（非常简化）的例子中，当一个人想买一个僵尸的时候，价格的 10% 被发送到你的钱包，剩下的被转给到僵尸的拥有者。</p>
+<p><img src="https://i.imgur.com/eTX2syY.png" alt></p>
+<p>查看整个合约在: <a href="https://ethfiddle.com/MuApSyO3jx" target="_blank" rel="noopener">https://ethfiddle.com/MuApSyO3jx</a></p>
+<p>为了节约一些费用，你可以跳过函数的第一行，这将会把以太币留在交易的余额里。通过使用我们之前描述的 <code>withdraw</code> 函数，你可以在后面的某个时间点提取合约上所有的以太币种。</p>
+<h3 id="4-订阅-会员"><a href="#4-订阅-会员" class="headerlink" title="4. 订阅 / 会员"></a>4. 订阅 / 会员</h3><hr>
+<p>这里，我们将会看到实现订阅 / 会员的商业逻辑的例子，主要有</p>
+<ol>
+<li>终生制</li>
+<li>基于时间制</li>
+<li>基于次数制</li>
+</ol>
+<p>我们将会创建一个合约，在合约中，一些函数功能只能被标记为有权限的个人所调用。</p>
+<h4 id="终生会员"><a href="#终生会员" class="headerlink" title="终生会员"></a>终生会员</h4><p>这里是一个简单的例子，创建一个布尔类型的 <code>mapping</code>, 一个用来判断布尔值是否为真的 <code>modifier</code> 和一个允许用户花一些钱成为会员的函数。</p>
+<p><img src="https://i.imgur.com/yiaEXle.png" alt></p>
+<p>在这里查看整个合约: <a href="https://ethfiddle.com/LgzLNtIIVF" target="_blank" rel="noopener">https://ethfiddle.com/LgzLNtIIVF</a></p>
+<p>或者，相对于使用一个布尔值代表会员 / 非会员，我们可以使用一个 <code>uint8</code> 类型，设计不同的会员等级，拥有更多的特性：免费用户是等级 0，等级 1 是银牌会员，等级 2 代表金牌会员等。<br>比如 <code>onlySilver()</code> 就能够检查会员等级是否 <code>&gt;=1</code>。</p>
+<p>这很简单，让我们继续。</p>
+<h4 id="有时限的会员-订阅"><a href="#有时限的会员-订阅" class="headerlink" title="有时限的会员 / 订阅"></a>有时限的会员 / 订阅</h4><p>在这里我们的商业模型将会假设订阅每天花费 0.005 以太币。</p>
+<p><img src="https://i.imgur.com/qtRpqHF.png" alt></p>
+<p>在这里查看整个合约: <a href="https://ethfiddle.com/Dx1jQlgazK" target="_blank" rel="noopener">https://ethfiddle.com/Dx1jQlgazK</a></p>
+<p>在这个例子中，当一个用户调用 <code>renewSubscription</code> 函数的时候，如必要的话 <code>subscriptionExpiration</code> 会被初始化为 <code>now</code>，并且会根据用户的付费增加一些天数。<br><code>onlyMember</code> 修饰语可以被用来检查当前的时间是否超过了会员有效期。</p>
+<h4 id="基于使用的会员-付费使用"><a href="#基于使用的会员-付费使用" class="headerlink" title="基于使用的会员 / 付费使用"></a>基于使用的会员 / 付费使用</h4><p>这里的商业模型涉及到一个用户预先购买函数调用，有点类似于你用设定好的价格购买 API 调用。</p>
+<p>在这个例子中，用户每个以太币可以购买 1000 次调用。用户每次调用有<code>onlyIfEnoughCalls</code>修饰符的函数，在检查符合调用条件后，<code>availableCalls</code> 变量会减少。</p>
+<p><img src="https://i.imgur.com/G8F9V8K.png" alt></p>
+<p>在这里查看整个合约: <a href="https://ethfiddle.com/rO0xD9nIl6" target="_blank" rel="noopener">https://ethfiddle.com/rO0xD9nIl6</a></p>
+<p>在上面所有的情景中，你可以添加对应的 <code>only{property}</code> 类型修饰符给任何函数，然后它将可以被有授权的用户调用。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>在这个包含两部分的系列文章中，我们讨论并且实现了一些可以应用到你的 DApp 中的商业模型，当你的目标是用它盈利的时候。</p>
+<p>我想强调这篇文章给出的所有代码，是每个模型最基本的实现模块，并可以根据你的需求进行修改。</p>
+<blockquote>
+<p>via: <a href="https://medium.com/loom-network/6-ways-to-monetize-your-ethereum-dapps-part-1-28e9bb18f87e" target="_blank" rel="noopener">https://medium.com/loom-network/6-ways-to-monetize-your-ethereum-dapps-part-1-28e9bb18f87e</a><br>via: <a href="https://medium.com/loom-network/6-ways-to-monetize-your-ethereum-dapps-part-2-857a2820dec4" target="_blank" rel="noopener">https://medium.com/loom-network/6-ways-to-monetize-your-ethereum-dapps-part-2-857a2820dec4</a><br>作者：<a href="https://medium.com/@gakonst" target="_blank" rel="noopener">Georgios Konstantopoulos</a><br>译者：<a href="https://github.com/Licyldj" target="_blank" rel="noopener">Licyldj</a>，Part 1<br>译者: <a href="https://github.com/maojr" target="_blank" rel="noopener">maojr</a>，Part 2<br>校对：<a href="https://github.com/RichardLian" target="_blank" rel="noopener">RichardLian</a></p>
+</blockquote>
+<p>「区块链技术指北」同名 <strong>知识星球</strong>，二维码如下，欢迎加入。BTW，<strong>李笑来老师也加入了</strong>。</p>
+<p><img src="https://i.imgur.com/pQxlDqF.jpg" alt="区块链技术指北"></p>
+<p>「区块链技术指北」相关资讯渠道：</p>
+<ul>
+<li>「区块链技术指北」同名知识星球，<a href="https://t.xiaomiquan.com/ZRbmaU3" target="_blank" rel="noopener">https://t.xiaomiquan.com/ZRbmaU3</a></li>
+<li>官网，<a href="https://chainon.io" target="_blank" rel="noopener">https://chainon.io</a></li>
+<li>官方博客，<a href="https://blog.chainon.io">https://blog.chainon.io</a></li>
+<li>官方社区，<a href="https://bbs.chainon.io" target="_blank" rel="noopener">https://bbs.chainon.io</a></li>
+<li>Telegram Channel，<a href="https://t.me/BlockchainAge" target="_blank" rel="noopener">https://t.me/BlockchainAge</a></li>
+<li>Telegram Group，<a href="https://t.me/bcage" target="_blank" rel="noopener">https://t.me/bcage</a></li>
+<li>Twitter，<a href="https://twitter.com/bcageone" target="_blank" rel="noopener">https://twitter.com/bcageone</a></li>
+<li>新浪微博，<a href="https://weibo.com/BlockchainAge" target="_blank" rel="noopener">https://weibo.com/BlockchainAge</a></li>
+</ul>
+<p>同时，本系列文章会在以下渠道同步更新，欢迎关注：</p>
+<ul>
+<li>「区块链技术指北」同名微信公众号（微信号：BlockchainAge）</li>
+<li>官方博客，<a href="https://blog.chainon.io">https://blog.chainon.io</a></li>
+<li>知乎，<a href="https://zhuanlan.zhihu.com/robinwen" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/robinwen</a></li>
+<li>Steemit，<a href="https://steemit.com/@robinwen" target="_blank" rel="noopener">https://steemit.com/@robinwen</a></li>
+<li>Medium，<a href="https://medium.com/@robinwan" target="_blank" rel="noopener">https://medium.com/@robinwan</a></li>
+<li>掘金，<a href="https://juejin.im/user/5673ccae60b2260ee435f89a/posts" target="_blank" rel="noopener">robinwen@juejin.im</a></li>
+<li>币乎，<a href="https://bihu.com/people/12109" target="_blank" rel="noopener">https://bihu.com/people/12109</a></li>
+</ul>
+<p>原创不易，读者可以通过如下途径打赏，虚拟货币、美元、法币均支持。</p>
+<ul>
+<li>BTC: 1HRZ7og2KjqpP3v3jskgueNu64kJrFU8GD</li>
+<li>ERC20 Token: 0x5c8DEB48dC08b5dC60A0290B718690a801509Dd1</li>
+<li>PayPal: <a href="https://www.paypal.me/robinwen" target="_blank" rel="noopener">https://www.paypal.me/robinwen</a></li>
+<li>微信打赏二维码</li>
+</ul>
+<p><img src="https://i.imgur.com/SzoNl5b.jpg" alt="Wechat"></p>
+<p>–EOF–</p>
+<p>版权声明：<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener">自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: 'f5d48c610cdf262e4f5c',
+            clientSecret: '52171aebeb6b254d1d599a10c411a3855650f4d2',
+            repo: 'BlockchainOne.github.io',
+            owner: 'BlockchainOne',
+            admin: ['dbarobin'],
+			id: md5(location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/04/01/chainone-wechat-issue-16/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/03/25/chainone-wechat-issue-15/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+
+            <!-- ad start -->
+            
+            <!-- ad end -->
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="ChainONE's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        chainone.org@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="chainone.org@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">二月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">16</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Blockchain/">Blockchain<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/EOS/">EOS<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/WeChat/">WeChat<span class="sidebar_archives-count">128</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">168</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/bcageone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/BlockchainAge" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/BlockchainOne" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://zhuanlan.zhihu.com/robinwen" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/chainone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>区块链技术指北 | ChainONE 官方博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?d+XW6aNuIPgOn1iA7NnB4g==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',false);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+   
+                    <!-- Google Ad -->
+                </main>
+            </div>
+        </body>
+    
+</html>

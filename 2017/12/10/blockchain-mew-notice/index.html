@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            「译」MyEtherWallet 首页提示 | 
+        
+        区块链技术指北 | ChainONE 官方博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" href="/img/favicon.ico">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="最近打开 MyEtherWallet 官网，发现有很长的提示，仔细阅读之后，觉得对于了解 ERC20 Token 甚至是区块链技术都有比较好的参考价值，于是心血来潮，把这些提示逐页拷贝下来，并做了翻译。把这篇文章翻译完之后，加深了对区块链和钱包的理解，有种相见恨晚的感觉。本篇文章比较浅显易懂，但不少提示都是我们容易忽视的。备份相当重要，不要等无法找回后再后悔莫及。">
+    <meta name="keywords" content="区块链, ChainONE,Blockchain,Wallet,MyEtherWallet">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="msapplication-starturl" content="https://blog.chainon.io/2017/12/10/blockchain-mew-notice/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel="alternate" type="application/atom+xml" href="atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.chainon.io/2017/12/10/blockchain-mew-notice/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="「译」MyEtherWallet 首页提示 | 区块链技术指北 | ChainONE 官方博客">
+    <meta property="og:image" content="/img/favicon.ico">
+    <meta property="og:description" content="最近打开 MyEtherWallet 官网，发现有很长的提示，仔细阅读之后，觉得对于了解 ERC20 Token 甚至是区块链技术都有比较好的参考价值，于是心血来潮，把这些提示逐页拷贝下来，并做了翻译。把这篇文章翻译完之后，加深了对区块链和钱包的理解，有种相见恨晚的感觉。本篇文章比较浅显易懂，但不少提示都是我们容易忽视的。备份相当重要，不要等无法找回后再后悔莫及。">
+    <meta property="og:article:tag" content="Blockchain"> <meta property="og:article:tag" content="Wallet"> <meta property="og:article:tag" content="MyEtherWallet"> 
+
+    
+        <meta property="article:published_time" content="Sun Dec 10 2017 22:22:22 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 23 2020 22:56:52 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://blog.chainon.io/2017/12/10/blockchain-mew-notice/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://blog.chainon.io/2017/12/10/blockchain-mew-notice/index.html",
+    "headline": "「译」MyEtherWallet 首页提示",
+    "datePublished": "Sun Dec 10 2017 22:22:22 GMT+0800",
+    "dateModified": "Tue Jun 23 2020 22:56:52 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "ChainONE",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Empower Blockchain."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "区块链技术指北 | ChainONE 官方博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.ico"
+        }
+    },
+    "keywords": ",Blockchain,Wallet,MyEtherWallet区块链, ChainONE",
+    "description": "最近打开 MyEtherWallet 官网，发现有很长的提示，仔细阅读之后，觉得对于了解 ERC20 Token 甚至是区块链技术都有比较好的参考价值，于是心血来潮，把这些提示逐页拷贝下来，并做了翻译。把这篇文章翻译完之后，加深了对区块链和钱包的理解，有种相见恨晚的感觉。本篇文章比较浅显易懂，但不少提示都是我们容易忽视的。备份相当重要，不要等无法找回后再后悔莫及。",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57297247-2', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#欢迎来到-MyEtherWallet-com-网站"><span class="post-toc-number">1.</span> <span class="post-toc-text">欢迎来到 MyEtherWallet.com 网站</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MyEtherWallet-不是银行"><span class="post-toc-number">2.</span> <span class="post-toc-text">MyEtherWallet 不是银行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MyEtherWallet-是一个客户端界面"><span class="post-toc-number">3.</span> <span class="post-toc-text">MyEtherWallet 是一个客户端界面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#等等，区块链是啥玩意儿？"><span class="post-toc-number">4.</span> <span class="post-toc-text">等等，区块链是啥玩意儿？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#为什么让我阅读这些？"><span class="post-toc-number">5.</span> <span class="post-toc-text">为什么让我阅读这些？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如果-MyEtherWallet-不能做这些操作，那重点是什么？"><span class="post-toc-number">6.</span> <span class="post-toc-text">如果 MyEtherWallet 不能做这些操作，那重点是什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#怎么保护自己免受钓鱼者的侵害"><span class="post-toc-number">7.</span> <span class="post-toc-text">怎么保护自己免受钓鱼者的侵害</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#怎样保护自己免受诈骗"><span class="post-toc-number">8.</span> <span class="post-toc-text">怎样保护自己免受诈骗</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#怎样保护你的资产不丢失"><span class="post-toc-number">9.</span> <span class="post-toc-text">怎样保护你的资产不丢失</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Welcome-to-MyEtherWallet-com"><span class="post-toc-number">10.</span> <span class="post-toc-text">Welcome to MyEtherWallet.com</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MyEtherWallet-is-not-a-Bank"><span class="post-toc-number">11.</span> <span class="post-toc-text">MyEtherWallet is not a Bank</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MyEtherWallet-is-an-Interface"><span class="post-toc-number">12.</span> <span class="post-toc-text">MyEtherWallet is an Interface</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Wait-WTF-is-a-Blockchain"><span class="post-toc-number">13.</span> <span class="post-toc-text">Wait, WTF is a Blockchain?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Why-are-you-making-me-read-all-this"><span class="post-toc-number">14.</span> <span class="post-toc-text">Why are you making me read all this?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#If-MyEtherWallet-can’t-do-those-things-what’s-the-point"><span class="post-toc-number">15.</span> <span class="post-toc-text">If MyEtherWallet can’t do those things, what’s the point?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#How-To-Protect-Yourself-from-Phishers"><span class="post-toc-number">16.</span> <span class="post-toc-text">How To Protect Yourself from Phishers</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#How-To-Protect-Yourself-from-Scams"><span class="post-toc-number">17.</span> <span class="post-toc-text">How To Protect Yourself from Scams</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#How-To-Protect-Yourself-from-Loss"><span class="post-toc-number">18.</span> <span class="post-toc-text">How To Protect Yourself from Loss</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                「译」MyEtherWallet 首页提示
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ChainONE</strong>
+        <span>12月 10, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0UlEQVR42u3aQXLbMBAEQP3/08k1h1CaWdAyC2ieWC4LQuPg9c7i9efI54WNjY2NjY2NjY39SPYrftpP/fubV+9XK/9n0xefLfaMjY2NvTX7w5/+YCsJ7GpDyZpXx1esg42NjX0AOy9Cs1KUlJn34NmesbGxsbGT9/ebztubpNRhY2NjY9/Ffv+ptiC1h4KNjY2NPQtokiNIwqCVo/yFLA0bGxv78ey7BrfffP/qfBsbGxv7wez2aUcISbFpx8nDnWNjY2Nvys4LQzLEzX8yK0LtPrGxsbFPYK9H/Hnof1dclURR2NjY2Gey86B/hZesmRx0XXSxsbGxD2DPLuvkW2wDo3uHwdjY2Ni7smfXJVtke2RJe7NUwLCxsbE3YueA9jJNgmlHAisDYGxsbOzT2PkwICe1oVJ7ZB8s2NjY2FuzZ41HG/HMLui0QwtsbGzs09hJvJ63Ae3FzTYeagcY2NjY2Oew2yBpdh2nDZtWRr/Y2NjY2HlhaEtRexFndjTFfBsbGxt7C3Yb7uTgnJRHXcPBMDY2NvYB7JVQPhm+RtHPKFSKFNjY2NjHsFe2eO9oNhlIFM0SNjY29qbs2ZAgKSSz0L9tQm64c4qNjY29ETtfbqklKNuelegKGxsb+wT2LLhpi8fsyk5CypsobGxs7BPYyQh2dij5QSS8YWnExsbG3po9+3d/FtO337te5LCxsbHPYeejgvZKTbLabFBRDBuwsbGxD2C3I4HZxZ32QNunCJWwsbGxt2C3Txv35JvLA6ak8fhQwLCxsbE3Yv9EuL90sWY0SIi+ERsbG3trdhvl14HOchszWxkbGxv7NHbeMLSRUHugK6PfohXBxsbGPp6dbDEf6M4am2IggY2NjY0dv7cbzYOh2QADGxsb+xx20jDMCtJK07ISY2FjY2Ofw54FN21Z+olRwZfm29jY2NgPZp/zYGNjY2NjY2NjYz/m+QsPnTQ20jT7kQAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Blockchain/">Blockchain</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/MyEtherWallet/">MyEtherWallet</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Wallet/">Wallet</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=「译」MyEtherWallet 首页提示&url=https://blog.chainon.io/2017/12/10/blockchain-mew-notice/index.html&pic=https://blog.chainon.io/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=「译」MyEtherWallet 首页提示&url=https://blog.chainon.io/2017/12/10/blockchain-mew-notice/index.html&via=ChainONE" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.chainon.io/2017/12/10/blockchain-mew-notice/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.chainon.io/2017/12/10/blockchain-mew-notice/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.chainon.io/2017/12/10/blockchain-mew-notice/index.html&title=「译」MyEtherWallet 首页提示" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=区块链技术指北 | ChainONE 官方博客&title=「译」MyEtherWallet 首页提示&summary=ChainONE, Empower Blockchain. 区块链技术指北，构建优质社区，传播和分享区块链技术，探讨潜在价值，连接技术和商业。&pics=https://blog.chainon.io/img/favicon.ico&url=https://blog.chainon.io/2017/12/10/blockchain-mew-notice/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.chainon.io/2017/12/10/blockchain-mew-notice/index.html&text=「译」MyEtherWallet 首页提示" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>最近打开 MyEtherWallet 官网，发现有很长的提示，仔细阅读之后，觉得对于了解 ERC20 Token 甚至是区块链技术都有比较好的参考价值，于是心血来潮，把这些提示逐页拷贝下来，并做了翻译。把这篇文章翻译完之后，加深了对区块链和钱包的理解，有种相见恨晚的感觉。本篇文章比较浅显易懂，但不少提示都是我们容易忽视的。备份相当重要，不要等无法找回后再后悔莫及。<br><a id="more"></a></p>
+<p><code>文/温国兵</code></p>
+<blockquote>
+<p>本文由币乎社区（bihu.com）内容支持计划奖励。</p>
+</blockquote>
+<p>这是「区块链技术指北」的第 4 篇文章。</p>
+<blockquote>
+<p>如果对我感兴趣，想和我交流，我的微信号：<strong>Wentasy</strong>，加我时简单介绍下自己，并注明来自「区块链技术指北」。同时我会把你拉入微信群「区块链技术指北」。BTW，李笑来老师也加入了我的知识星球，文末有加入方式。</p>
+</blockquote>
+<p>最近打开 MyEtherWallet 官网，发现有很长的提示，仔细阅读之后，觉得对于了解 ERC20 Token 甚至是区块链技术都有比较好的参考价值，于是心血来潮，把这些提示逐页拷贝下来，并做了翻译。</p>
+<p><img src="https://i.imgur.com/BD9Rk6t.png" alt="MyEtherWallet"></p>
+<blockquote>
+<p>题图来自: © MEW / MyEtherWallet banner logo / <a href="http://www.myetherwallet.com" target="_blank" rel="noopener">www.myetherwallet.com</a></p>
+</blockquote>
+<h3 id="欢迎来到-MyEtherWallet-com-网站"><a href="#欢迎来到-MyEtherWallet-com-网站" class="headerlink" title="欢迎来到 MyEtherWallet.com 网站"></a>欢迎来到 MyEtherWallet.com 网站</h3><hr>
+<p>我们知道以下提示很烦人，表示非常抱歉。</p>
+<p><strong>为了你的资产安全，请花费一点时间来阅读提示。🙏 如果你没有注意到这些警告，你的资产面临被盗的风险。</strong></p>
+<p><strong>如果你访问钓鱼网站导致资产被盗或者丢失了私钥，我们不能恢复你的资产或者冻结你的账户。</strong></p>
+<p><strong>什么是 MEW？</strong></p>
+<ul>
+<li>MyEtherWallet 是一个免费、开源的客户端界面。</li>
+<li>我们允许你直接和区块链交互，但不会控制你的私钥和你的资产。</li>
+<li>有且仅有 <strong>你</strong> 对你的资产安全负责。</li>
+</ul>
+<h3 id="MyEtherWallet-不是银行"><a href="#MyEtherWallet-不是银行" class="headerlink" title="MyEtherWallet 不是银行"></a>MyEtherWallet 不是银行</h3><hr>
+<ul>
+<li>当你在银行或者交易所开通一个账户，他们会在他们维护的系统里创建一个账号。</li>
+<li>银行会跟踪你的个人信息、账户密码、余额、交易记录甚至你的资产。</li>
+<li>银行收取费用来管理你的账户和提供类似银行卡被盗退还交易的服务。</li>
+<li>银行允许你写支票和转账收取借记卡费用，在线查询余额，重置密码和丢失借记卡时补办。</li>
+<li>你拥有银行或者交易所的账户，他们来决定你有多少资产可以转出，你可以转出到哪里，你可以持有多久可疑的存款。不幸的是，所有的操作都需要收费。</li>
+</ul>
+<h3 id="MyEtherWallet-是一个客户端界面"><a href="#MyEtherWallet-是一个客户端界面" class="headerlink" title="MyEtherWallet 是一个客户端界面"></a>MyEtherWallet 是一个客户端界面</h3><hr>
+<ul>
+<li>当你在 MyEtherWallet 创建一个账户，你将生成加密的数字集合: 你的私钥和公钥（地址）。</li>
+<li>完全在你电脑的浏览器里处理你的私钥。</li>
+<li>我们绝不发送、接收、存储你的私钥、密码或者其他的账户信息。</li>
+<li>我们不收取交易费用。你可以轻而易举地使用我们的 <strong>客户端界面</strong> 来 <strong>直接和区块链</strong> 进行交互。</li>
+<li>如果你发送你的 <code>公钥（地址）</code> 给别人，他们可以发送 ETH 或者其他代币。👍</li>
+<li>如果你发送你的 <code>私钥</code> 给别人，他们将完全控制你的账户。👎</li>
+</ul>
+<h3 id="等等，区块链是啥玩意儿？"><a href="#等等，区块链是啥玩意儿？" class="headerlink" title="等等，区块链是啥玩意儿？"></a>等等，区块链是啥玩意儿？</h3><hr>
+<ul>
+<li>区块链就像庞大的、全球的、分布式的电子表格。</li>
+<li>它跟踪客户 A 发送多少资产到客户 B，还会保留每一个账户的余额是多少。</li>
+<li>遍布全球的成千上万的拥有特殊计算机的人（矿工）来存储和维护区块链。</li>
+<li>区块链里的区块由个人发起的交易组成，交易渠道包括 MyEtherWallet、MetaMask、Exodus、Mist、Geth、Parity 等。</li>
+<li>当你在 MyEtherWallet.com 查看余额或者在 <a href="https://etherscan.io/" target="_blank" rel="noopener">etherscan.io</a> 查看你的交易，你是从区块链中查询数据，而不是我们的系统里。</li>
+</ul>
+<p>再次强调：<strong>我们不是银行。</strong></p>
+<h3 id="为什么让我阅读这些？"><a href="#为什么让我阅读这些？" class="headerlink" title="为什么让我阅读这些？"></a>为什么让我阅读这些？</h3><hr>
+<p><strong>因为我们需要你明白我们不能做以下事情：</strong></p>
+<ul>
+<li>访问你的账户或者从你的资产里转账。</li>
+<li>恢复或者篡改你的私钥。</li>
+<li>恢复或者重置你的密码。</li>
+<li>兑回、取消或者退回交易。</li>
+<li>冻结账户。</li>
+</ul>
+<p>有且仅有 <strong>你</strong> 对你的资产安全负责。</p>
+<ul>
+<li>用心的保证你的私钥和密码安全。你的私钥有时也被称为助记词、密钥库文件、UTC 时间戳文件、JSON 文件、钱包文件。</li>
+<li>如果你丢失了私钥或者密码，任何人都不能恢复。</li>
+<li>如果你在钓鱼网站输入了你的私钥，你的全部资产将会面临被盗的风险。</li>
+</ul>
+<h3 id="如果-MyEtherWallet-不能做这些操作，那重点是什么？"><a href="#如果-MyEtherWallet-不能做这些操作，那重点是什么？" class="headerlink" title="如果 MyEtherWallet 不能做这些操作，那重点是什么？"></a>如果 MyEtherWallet 不能做这些操作，那重点是什么？</h3><hr>
+<ul>
+<li>因为这是分布式和区块链的重点。</li>
+<li>当你想转移你的资产时，你将不会依赖银行、政府或者任何人。</li>
+<li>你讲不需要依赖银行或者交易所的安全来保证你的资产安全。</li>
+<li>如果你没有发现这些事情的价值，质问自己为什么你认为区块链和加密货币是有价值的。😉</li>
+<li>如果你不想关心这些，可以考虑使用 <a href="https://www.coinbase.com/" target="_blank" rel="noopener">Coinbase</a> 或者 <a href="https://blockchain.info/wallet/#/signup" target="_blank" rel="noopener">Blockchain.info</a>。他们提供了更加熟悉的包含用户名和密码的账户。如果你担心安全问题但是依然想使用 MEW，[购买一个硬件钱包]<a href="https://myetherwallet.github.io/knowledge-base/hardware-wallets/hardware-wallet-recommendations.html)！他们将保证你的私钥安全。" target="_blank" rel="noopener">https://myetherwallet.github.io/knowledge-base/hardware-wallets/hardware-wallet-recommendations.html)！他们将保证你的私钥安全。</a></li>
+</ul>
+<h3 id="怎么保护自己免受钓鱼者的侵害"><a href="#怎么保护自己免受钓鱼者的侵害" class="headerlink" title="怎么保护自己免受钓鱼者的侵害"></a>怎么保护自己免受钓鱼者的侵害</h3><hr>
+<p>钓鱼者发送一个包含网站链接的消息给你，这个链接看起来像 MyEtherWallet、EtherDelta、Paypal 或者你的银行网站，但是这些网站不是真实的。这些钓鱼者提过钓鱼网站盗取你的信息然后盗取你的钱财。</p>
+<ul>
+<li>安装 <a href="https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn" target="_blank" rel="noopener">EAL</a>、<a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank" rel="noopener">MetaMask</a>、<a href="https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige" target="_blank" rel="noopener">Cryptonite by Metacert</a> 或者 <a href="https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm" target="_blank" rel="noopener">MyEtherWallet Chrome Extension</a> 来阻止恶意网站。</li>
+<li>经常检查 MEW 网站的链接：<a href="https://www.myetherwallet.com" target="_blank" rel="noopener">https://www.myetherwallet.com</a>。</li>
+<li>经常确认浏览器地址栏有绿色的 <strong>MYETHERWALLET LLC [US]</strong> 标记。</li>
+<li>不要相信从邮件、Slack、Reddit 或者 Twitter 等随机发送给你的信息或者链接。</li>
+<li><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en" target="_blank" rel="noopener">安装 AdBlocker</a> 并且不要点击来自搜索引擎的广告（比如 Google）。</li>
+</ul>
+<h3 id="怎样保护自己免受诈骗"><a href="#怎样保护自己免受诈骗" class="headerlink" title="怎样保护自己免受诈骗"></a>怎样保护自己免受诈骗</h3><hr>
+<p>人们试图用各种方法无偿给他们钱。</p>
+<ul>
+<li>如果福利好到难以置信，这可能就是诈骗。</li>
+<li>转账给某人或者某个项目之前需要做调研。在更多的网站或者论坛查找信息。要多加警惕。</li>
+<li>当你不明白某事某物或者它看起来不对时，多给自己提问题。</li>
+<li>不要让恐惧、传销或者害怕错过战胜常识。如果某件事情特别紧急，问问自己为什么？它将会衍生错失恐惧症或者阻止你做有效的调研。</li>
+</ul>
+<h3 id="怎样保护你的资产不丢失"><a href="#怎样保护你的资产不丢失" class="headerlink" title="怎样保护你的资产不丢失"></a>怎样保护你的资产不丢失</h3><hr>
+<p>如果你丢失了私钥或者密码，它将永远丢失。不要丢失它。</p>
+<ul>
+<li>备份你的私钥和密码。不要仅仅存放在你的电脑。打印在纸张或者存储在 USB 设备里。</li>
+<li>在不同的地方存储这些纸张或者 USB 设备。如果一个备份与笔记本电脑一起被火灾或洪水摧毁，则备份是无用的。</li>
+<li>不要在 Dropbox、Google Drive 或者其他云盘存储你的私钥。如果你的账户被入侵，资产也将被盗。</li>
+<li>如果你有超过 1 周工资价值的加密货币，准备一个硬件钱包吧。没有理由，这是值得的，我保证。</li>
+</ul>
+<p><a href="https://myetherwallet.github.io/knowledge-base/getting-started/protecting-yourself-and-your-funds.html" target="_blank" rel="noopener">更多的安全提示</a></p>
+<p><strong>翻译后记</strong></p>
+<p>把这篇文章翻译完之后，加深了对区块链和钱包的理解，有种相见恨晚的感觉。本篇文章比较浅显易懂，但不少提示都是我们容易忽视的。备份相当重要，不要等无法找回后再后悔莫及。</p>
+<p>附英文原文。</p>
+<h3 id="Welcome-to-MyEtherWallet-com"><a href="#Welcome-to-MyEtherWallet-com" class="headerlink" title="Welcome to MyEtherWallet.com"></a>Welcome to MyEtherWallet.com</h3><hr>
+<p>We know this click-through stuff is annoying. We are sorry.</p>
+<p><strong>Please take some time to understand this for your own safety. 🙏 Your funds will be stolen if you do not heed these warnings.</strong></p>
+<p><strong>We cannot recover your funds or freeze your account if you visit a phishing site or lose your private key.</strong></p>
+<p><strong>What is MEW?</strong></p>
+<ul>
+<li>MyEtherWallet is a free, open-source, client-side interface.</li>
+<li>We allow you to interact directly with the blockchain while remaining in full control of your keys &amp; your funds.</li>
+<li><strong>You</strong> and <strong>only you</strong> are responsible for your security.</li>
+</ul>
+<h3 id="MyEtherWallet-is-not-a-Bank"><a href="#MyEtherWallet-is-not-a-Bank" class="headerlink" title="MyEtherWallet is not a Bank"></a>MyEtherWallet is not a Bank</h3><hr>
+<ul>
+<li>When you open an account with a bank or exchange, they create an account for you in their system.</li>
+<li>The bank keeps track of your personal information, account passwords, balances, transactions and ultimately your money.</li>
+<li>The bank charge fees to manage your account and provide services, like refunding transactions when your card gets stolen.</li>
+<li>The bank allows you to write a check or charge your debit card to send money, go online to check your balance, reset your password, and get a new debit card if you lose it.</li>
+<li>You have an account with the bank or exchange and they decide how much money you can send, where you can send it, and how long to hold on a suspicious deposit. All for a fee.</li>
+</ul>
+<h3 id="MyEtherWallet-is-an-Interface"><a href="#MyEtherWallet-is-an-Interface" class="headerlink" title="MyEtherWallet is an Interface"></a>MyEtherWallet is an Interface</h3><hr>
+<ul>
+<li>When you create an account on MyEtherWallet you are generating a cryptographic set of numbers: your private key and your public key (address).</li>
+<li>The handling of your keys happens entirely on your computer, inside your browser.</li>
+<li>We never transmit, receive or store your private key, password, or other account information.</li>
+<li>We do not charge a transaction fee.<br>You are simply using our <strong>interface</strong> to interact <strong>directly with the blockchain.</strong></li>
+<li>If you send your <code>public key (address)</code> to someone, they can send you ETH or tokens. 👍</li>
+<li>If you send your <code>private key</code> to someone, they now have full control of your account. 👎</li>
+</ul>
+<h3 id="Wait-WTF-is-a-Blockchain"><a href="#Wait-WTF-is-a-Blockchain" class="headerlink" title="Wait, WTF is a Blockchain?"></a>Wait, WTF is a Blockchain?</h3><hr>
+<ul>
+<li>The blockchain is like a huge, global, decentralized spreadsheet.</li>
+<li>It keeps track of who sent how many coins to whom, and what the balance of every account is.</li>
+<li>It is stored and maintained by thousands of people (miners) across the globe who have special computers.</li>
+<li>The blocks in the blockchain are made up of all the individual transactions sent from MyEtherWallet, MetaMask, Exodus, Mist, Geth, Parity, and everywhere else.</li>
+<li>When you see your balance on MyEtherWallet.com or view your transactions on <a href="https://etherscan.io/" target="_blank" rel="noopener">etherscan.io</a>, you are seeing data on the blockchain, not in our personal systems.</li>
+</ul>
+<p>Again: <strong>we are not a bank.</strong></p>
+<h3 id="Why-are-you-making-me-read-all-this"><a href="#Why-are-you-making-me-read-all-this" class="headerlink" title="Why are you making me read all this?"></a>Why are you making me read all this?</h3><hr>
+<p><strong>Because we need you to understand that we cannot…</strong></p>
+<ul>
+<li>Access your account or send your funds for you X.</li>
+<li>Recover or change your private key.</li>
+<li>Recover or reset your password.</li>
+<li>Reverse, cancel, or refund transactions.</li>
+<li>Freeze accounts.</li>
+</ul>
+<p><strong>You</strong> and <strong>only you</strong> are responsible for your security.</p>
+<ul>
+<li>Be diligent to keep your private key and password safe. Your private key is sometimes called your mnemonic phrase, keystore file, UTC file, JSON file, wallet file.</li>
+<li>If lose your private key or password, no one can recover it.</li>
+<li>If you enter your private key on a phishing website, you will have <strong>all your funds taken.</strong></li>
+</ul>
+<h3 id="If-MyEtherWallet-can’t-do-those-things-what’s-the-point"><a href="#If-MyEtherWallet-can’t-do-those-things-what’s-the-point" class="headerlink" title="If MyEtherWallet can’t do those things, what’s the point?"></a>If MyEtherWallet can’t do those things, what’s the point?</h3><hr>
+<ul>
+<li>Because that is the point of decentralization and the blockchain.</li>
+<li>You don’t have to rely on your bank, government, or anyone else when you want to move your funds.</li>
+<li>You don’t have to rely on the security of an exchange or bank to keep your funds safe.</li>
+<li>If you don’t find these things valuable, ask yourself why you think the blockchain and cryptocurrencies are valuable. 😉</li>
+<li>If you don’t like the sound of this, consider using <a href="https://www.coinbase.com/" target="_blank" rel="noopener">Coinbase</a> or <a href="https://blockchain.info/wallet/#/signup" target="_blank" rel="noopener">Blockchain.info</a>. They have more familiar accounts with usernames &amp; passwords.<br>If you are scared but want to use MEW, <a href="https://myetherwallet.github.io/knowledge-base/hardware-wallets/hardware-wallet-recommendations.html" target="_blank" rel="noopener">get a hardware wallet</a>! These keep your keys secure.</li>
+</ul>
+<h3 id="How-To-Protect-Yourself-from-Phishers"><a href="#How-To-Protect-Yourself-from-Phishers" class="headerlink" title="How To Protect Yourself from Phishers"></a>How To Protect Yourself from Phishers</h3><hr>
+<p>Phishers send you a message with a link to a website that looks just like MyEtherWallet, EtherDelta, Paypal, or your bank, but is not the real website. They steal your information and then steal your money.</p>
+<ul>
+<li>Install <a href="https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn" target="_blank" rel="noopener">EAL</a> or <a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank" rel="noopener">MetaMask</a> or <a href="https://chrome.google.com/webstore/detail/cryptonite-by-metacert/keghdcpemohlojlglbiegihkljkgnige" target="_blank" rel="noopener">Cryptonite by Metacert</a> or the <a href="https://chrome.google.com/webstore/detail/myetherwallet-cx/nlbmnnijcnlegkjjpcfjclmcfggfefdm" target="_blank" rel="noopener">MyEtherWallet Chrome Extension</a> to block malicious websites.</li>
+<li>Always check the URL: <a href="https://www.myetherwallet.com" target="_blank" rel="noopener">https://www.myetherwallet.com</a>.</li>
+<li>Always make sure the URL bar has <strong>MYETHERWALLET LLC [US]</strong> in green.</li>
+<li>Do not trust messages or links sent to you randomly via email, Slack, Reddit, Twitter, etc.</li>
+<li>Always navigate directly to a site before you enter information. Do not enter information after clicking a link from a message or email.</li>
+<li><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en" target="_blank" rel="noopener">Install an AdBlocker</a> and do not click ads on your search engine (e.g. Google).</li>
+</ul>
+<h3 id="How-To-Protect-Yourself-from-Scams"><a href="#How-To-Protect-Yourself-from-Scams" class="headerlink" title="How To Protect Yourself from Scams"></a>How To Protect Yourself from Scams</h3><hr>
+<p>People will try to get you to give them money in return for nothing.</p>
+<ul>
+<li>If it is too good to be true, it probably is.</li>
+<li>Research before sending money to someone or some project. Look for information on a variety of websites and forums. Be wary.</li>
+<li>Ask questions when you don’t understand something or it doesn’t seem right.</li>
+<li>Don’t let fear, FUD, or FOMO win over common sense. If something is very urgent, ask yourself”why?”. It may be to create FOMO or prevent you from doing research.</li>
+</ul>
+<h3 id="How-To-Protect-Yourself-from-Loss"><a href="#How-To-Protect-Yourself-from-Loss" class="headerlink" title="How To Protect Yourself from Loss"></a>How To Protect Yourself from Loss</h3><hr>
+<p>If you lose your private key or password, it is gone forever. Don’t lose it.</p>
+<ul>
+<li>Make a backup of your private key and password. Do NOT just store it on your computer. Print it out on a piece of paper or save it to a USB drive.</li>
+<li>Store this paper or USB drive in a different physical location. A backup is not useful if it is destroyed by a fire or flood along with your laptop.</li>
+<li>Do not store your private key in Dropbox, Google Drive, or other cloud storage. If that account is compromised, your funds will be stolen.</li>
+<li>If you have more than 1-week’s worth of pay worth of cryptocurrency, get a hardware wallet. No excuses. It’s worth it. I promise.</li>
+</ul>
+<p><a href="https://myetherwallet.github.io/knowledge-base/getting-started/protecting-yourself-and-your-funds.html" target="_blank" rel="noopener">Even more Security Tips!</a></p>
+<p>「区块链技术指北」同名 <strong>知识星球</strong>，二维码如下，欢迎加入。BTW，<strong>李笑来老师也加入了</strong>。</p>
+<p><img src="https://i.imgur.com/pQxlDqF.jpg" alt="区块链技术指北"></p>
+<p>「区块链技术指北」相关资讯渠道：</p>
+<ul>
+<li>「区块链技术指北」同名知识星球，<a href="https://t.xiaomiquan.com/ZRbmaU3" target="_blank" rel="noopener">https://t.xiaomiquan.com/ZRbmaU3</a></li>
+<li>官方社区，<a href="https://bbs.chainon.io" target="_blank" rel="noopener">https://bbs.chainon.io</a></li>
+<li>Telegram Channel，<a href="https://t.me/BlockchainAge" target="_blank" rel="noopener">https://t.me/BlockchainAge</a></li>
+<li>Telegram Group，<a href="https://t.me/bcage" target="_blank" rel="noopener">https://t.me/bcage</a></li>
+<li>Twitter，<a href="https://twitter.com/bcageone" target="_blank" rel="noopener">https://twitter.com/bcageone</a></li>
+<li>新浪微博，<a href="https://weibo.com/BlockchainAge" target="_blank" rel="noopener">https://weibo.com/BlockchainAge</a></li>
+</ul>
+<p>同时，本系列文章会在以下渠道同步更新，欢迎关注：</p>
+<ul>
+<li>「区块链技术指北」同名微信公众号（微信号：BlockchainAge）</li>
+<li>个人博客，<a href="https://dbarobin.com" target="_blank" rel="noopener">https://dbarobin.com</a></li>
+<li>知乎，<a href="https://zhuanlan.zhihu.com/robinwen" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/robinwen</a></li>
+<li>Steemit，<a href="https://steemit.com/@robinwen" target="_blank" rel="noopener">https://steemit.com/@robinwen</a></li>
+<li>Medium，<a href="https://medium.com/@robinwan" target="_blank" rel="noopener">https://medium.com/@robinwan</a></li>
+<li>掘金，<a href="https://juejin.im/user/5673ccae60b2260ee435f89a/posts" target="_blank" rel="noopener">robinwen@juejin.im</a></li>
+<li>币乎，<a href="https://bihu.com/people/12109" target="_blank" rel="noopener">https://bihu.com/people/12109</a></li>
+</ul>
+<p>原创不易，读者可以通过如下途径打赏，虚拟货币、美元、法币均支持。</p>
+<ul>
+<li>BTC: 3QboL2k5HfKjKDrEYtQAKubWCjx9CX7i8f</li>
+<li>ERC20 Token: 0x8907B2ed72A1E2D283c04613536Fac4270C9F0b3</li>
+<li>PayPal: <a href="https://www.paypal.me/robinwen" target="_blank" rel="noopener">https://www.paypal.me/robinwen</a></li>
+<li>微信打赏二维码</li>
+</ul>
+<p><img src="https://i.imgur.com/SzoNl5b.jpg" alt="Wechat"></p>
+<p>–EOF–</p>
+<p>版权声明：<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener">自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: 'f5d48c610cdf262e4f5c',
+            clientSecret: '52171aebeb6b254d1d599a10c411a3855650f4d2',
+            repo: 'BlockchainOne.github.io',
+            owner: 'BlockchainOne',
+            admin: ['dbarobin'],
+			id: md5(location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/12/11/blockchain-add-custom-token-key/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/09/blockchain-erc20-wallet/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+
+            <!-- ad start -->
+            
+            <!-- ad end -->
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="ChainONE's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        chainone.org@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="chainone.org@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">二月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">16</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Blockchain/">Blockchain<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/EOS/">EOS<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/WeChat/">WeChat<span class="sidebar_archives-count">128</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">168</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/bcageone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/BlockchainAge" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/BlockchainOne" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://zhuanlan.zhihu.com/robinwen" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/chainone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>区块链技术指北 | ChainONE 官方博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?d+XW6aNuIPgOn1iA7NnB4g==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',false);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+   
+                    <!-- Google Ad -->
+                </main>
+            </div>
+        </body>
+    
+</html>

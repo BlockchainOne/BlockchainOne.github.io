@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            以太坊生态中的工具与技术 | 
+        
+        区块链技术指北 | ChainONE 官方博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" href="/img/favicon.ico">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="如果你是一个以太坊或区块链开发者新手，那么很可能你正有点不知所措地（至少我是）试图去了解以太坊生态中的所有工具与技术。所以我决定简单介绍一下你在开始学习以太坊时会经常遇到的各种各样的组件。希望这将有助于你对整个以太坊生态，以及生态中的每一部分是如何联系在一起的有一个全局观。希望这能让你对以太坊生态系统有一个概括性的了解，并从现在开始能对每个相关组件进行更深入的研究和理解。">
+    <meta name="keywords" content="区块链, ChainONE,Blockchain,Ethereum">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="msapplication-starturl" content="https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="区块链技术指北 | ChainONE 官方博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel="alternate" type="application/atom+xml" href="atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="以太坊生态中的工具与技术 | 区块链技术指北 | ChainONE 官方博客">
+    <meta property="og:image" content="/img/favicon.ico">
+    <meta property="og:description" content="如果你是一个以太坊或区块链开发者新手，那么很可能你正有点不知所措地（至少我是）试图去了解以太坊生态中的所有工具与技术。所以我决定简单介绍一下你在开始学习以太坊时会经常遇到的各种各样的组件。希望这将有助于你对整个以太坊生态，以及生态中的每一部分是如何联系在一起的有一个全局观。希望这能让你对以太坊生态系统有一个概括性的了解，并从现在开始能对每个相关组件进行更深入的研究和理解。">
+    <meta property="og:article:tag" content="Blockchain"> <meta property="og:article:tag" content="Ethereum"> 
+
+    
+        <meta property="article:published_time" content="Wed Apr 11 2018 18:22:22 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 23 2020 22:56:52 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/index.html",
+    "headline": "以太坊生态中的工具与技术",
+    "datePublished": "Wed Apr 11 2018 18:22:22 GMT+0800",
+    "dateModified": "Tue Jun 23 2020 22:56:52 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "ChainONE",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Empower Blockchain."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "区块链技术指北 | ChainONE 官方博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.ico"
+        }
+    },
+    "keywords": ",Blockchain,Ethereum区块链, ChainONE",
+    "description": "如果你是一个以太坊或区块链开发者新手，那么很可能你正有点不知所措地（至少我是）试图去了解以太坊生态中的所有工具与技术。所以我决定简单介绍一下你在开始学习以太坊时会经常遇到的各种各样的组件。希望这将有助于你对整个以太坊生态，以及生态中的每一部分是如何联系在一起的有一个全局观。希望这能让你对以太坊生态系统有一个概括性的了解，并从现在开始能对每个相关组件进行更深入的研究和理解。",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57297247-2', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-以太坊"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 以太坊</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Geth"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. Geth</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#客户端守护进程"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">客户端守护进程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#geth-终端"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">geth 终端</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mist-浏览器"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Mist 浏览器</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Parity"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. Parity</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-Web3-js"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. Web3.js</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-Solidity"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. Solidity</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-Truffle-Embark"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. Truffle/Embark</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-Metamask"><span class="post-toc-number">7.</span> <span class="post-toc-text">7. Metamask</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-ENS"><span class="post-toc-number">8.</span> <span class="post-toc-text">8. ENS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-Swarm"><span class="post-toc-number">9.</span> <span class="post-toc-text">9. Swarm</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-IPFS"><span class="post-toc-number">10.</span> <span class="post-toc-text">10. IPFS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#11-Whisper"><span class="post-toc-number">11.</span> <span class="post-toc-text">11. Whisper</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                以太坊生态中的工具与技术
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>ChainONE</strong>
+        <span>4月 11, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADi0lEQVR42u3ay27bQBAEQP//TyfXAIml7pldWgGKJ8OWTG7p0JrH1y/XH9cXAhw4cODAgQMHDhw4PpjjK76+e/0/bvDX67+74+xd+bO9fj0OHDhw4LjH8SaKYo4ZXPLK10yzs+DAgQMHjtscrwPs9TGS4+X3yg82+/84cODAgeNzOPJwzf+ah2v+bDhw4MCB43/hyMuzNho3h8eBAwcOHJ/JkTfUkjZfW9Ql98qxHuqV4sCBAweOQwsNn/zzD+x34MCBAweOxZUHW7sG0a7Q5aXjmxPhwIEDB46jHPlYqC3M8lW5TbPvTXkWjLhw4MCBA8dZjv3waTNqOjVSaj8eHDhw4MDxDEfbHMwf9DVfvhjRBm30Lhw4cODAcYGjbbflbcG8zZcPivIPsl5owIEDBw4cRznyFuHswK+jOmrkBa9pIxwHDhw4cJzlOBuZSUNwE73JkKk9EQ4cOHDguM2RB97ZAdW+UXh4vwMHDhw4cIw42searT7sKfPi8HBzEAcOHDhwjGqWPErzgVBbmCW/z2M7D3scOHDgwHGWYxNvs4WD9r/tY3i4OYgDBw4cONYc7arB2WPkMd8OroZBiwMHDhw4Fhz52CbHmr0rL+TyOK+DFgcOHDhwHOJIbrAvwDZLb/lIqRhr4cCBAweOoxxFqVPG3iYO2+W8dqyFAwcOHDhucySHnw1+8iDfBHC7PIEDBw4cOO5x5FGaB20CMYvw/eFx4MCBA8eTHEko5kF4drUuj/D8SwMOHDhw4LjHkRRseWNuVoDNWpDJl4M3T44DBw4cOC5wzBqCbSMvatWVK3H5XXDgwIEDxzMcbZmUP9B+ZJW/tzg8Dhw4cOC4zJGPgtoDzIquzUfSlos4cODAgeMex77EygMvb+flNO0KBQ4cOHDguMeRx1474GmHWHkMtxGOAwcOHDie5EjKtrw5eIrpmS8BOHDgwIHjHsf+kG07r12byJ+hDWwcOHDgwHGDI7+S27flVsvRBnO90IADBw4cOBYcm4idBWpRXC0GVKteKQ4cOHDgODR2apuGbeieQs8/mOT3OHDgwIHjHkcek/tWYBKW0WHKa7jfgQMHDhw4rnG06wLt4fdk7btw4MCBA8fnc7QlXFuAzb4ERKtyOHDgwIHjKMfZwikhaFflZiOrYdDiwIEDB44Fx6njzQqzGUQ+oMKBAwcOHE9yuHDgwIEDBw4cOHDgwPFh12/NlVipxKodSgAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Blockchain/">Blockchain</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Ethereum/">Ethereum</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=以太坊生态中的工具与技术&url=https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/index.html&pic=https://blog.chainon.io/img/favicon.ico&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=以太坊生态中的工具与技术&url=https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/index.html&via=ChainONE" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/index.html&title=以太坊生态中的工具与技术" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=区块链技术指北 | ChainONE 官方博客&title=以太坊生态中的工具与技术&summary=ChainONE, Empower Blockchain. 区块链技术指北，构建优质社区，传播和分享区块链技术，探讨潜在价值，连接技术和商业。&pics=https://blog.chainon.io/img/favicon.ico&url=https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://blog.chainon.io/2018/04/11/tools-and-technologies-in-the-ethereum-ecosystem/index.html&text=以太坊生态中的工具与技术" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>如果你是一个以太坊或区块链开发者新手，那么很可能你正有点不知所措地（至少我是）试图去了解以太坊生态中的所有工具与技术。所以我决定简单介绍一下你在开始学习以太坊时会经常遇到的各种各样的组件。希望这将有助于你对整个以太坊生态，以及生态中的每一部分是如何联系在一起的有一个全局观。希望这能让你对以太坊生态系统有一个概括性的了解，并从现在开始能对每个相关组件进行更深入的研究和理解。<br><a id="more"></a></p>
+<p>这是「区块链技术指北」的第 32 篇文章。</p>
+<blockquote>
+<p>如果对我感兴趣，想和我交流，我的微信号：<strong>Wentasy</strong>，加我时简单介绍下自己，并注明来自「区块链技术指北」。同时我会把你拉入微信群「区块链技术指北」。BTW，李笑来老师也加入了我们的知识星球，文末有加入方式。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/Jjkpwfr.png" alt></p>
+<blockquote>
+<p>题图来自: © Mahesh Murthy / Tools and Technologies in the Ethereum Ecosystem / medium.com</p>
+</blockquote>
+<p>如果你是一个以太坊或区块链开发者新手，那么很可能你正有点不知所措地（至少我是）试图去了解以太坊生态中的所有工具与技术。所以我决定简单介绍一下你在开始学习以太坊时会经常遇到的各种各样的组件。希望这将有助于你对整个以太坊生态，以及生态中的每一部分是如何联系在一起的有一个全局观。</p>
+<h2 id="1-以太坊"><a href="#1-以太坊" class="headerlink" title="1. 以太坊"></a>1. <a href="http://ethereum.org/" target="_blank" rel="noopener">以太坊</a></h2><hr>
+<p>以太坊是一个智能合约区块链平台，在上面你可以创建去中心化的应用程序（也被称为智能合约 【译注：称为 Dapps 更合适】）。如果您是技术专家，那么这个白皮书值得研读：<a href="https://github.com/ethereum/wiki/wiki/White-Paper" target="_blank" rel="noopener">https://github.com/ethereum/wiki/wiki/White-Paper</a>.</p>
+<p>如果你之前有创建过 web 应用程序，我有写过一篇<a href="https://medium.com/@mvmurthy/ethereum-for-web-developers-890be23d1d0c#.8wo4bi611" target="_blank" rel="noopener">文章</a>去比较以太坊区块链和 web 应用程序架构，这可能有助于你更深入地了解以太坊。</p>
+<h2 id="2-Geth"><a href="#2-Geth" class="headerlink" title="2. Geth"></a>2. <a href="https://github.com/ethereum/go-ethereum" target="_blank" rel="noopener">Geth</a></h2><hr>
+<p>Geth 是由<a href="http://ethereum.org/" target="_blank" rel="noopener">以太坊基金会</a>提供的官方客户端软件。它是用 Go 编程语言编写的。 这个软件包含了下面几个值得了解的组件：</p>
+<h3 id="客户端守护进程"><a href="#客户端守护进程" class="headerlink" title="客户端守护进程"></a>客户端守护进程</h3><hr>
+<p>当您启动这个客户端守护程序时，它会连接到网络中的其它客户端（也被称为节点）并下载一个区块链拷贝。 它将不断与其他节点进行通信，以使其区块拷贝保持更新到最新状态。它还具有挖掘区块并将交易添加到区块链，验证并执行区块中的交易的能力。它还可以充当 API 服务器，您可以通过 RPC 方式来其访问其暴露的 API 接口。</p>
+<p><img src="https://i.imgur.com/eqExYxM.png" alt></p>
+<h3 id="geth-终端"><a href="#geth-终端" class="headerlink" title="geth 终端"></a><a href="https://github.com/ethereum/go-ethereum/wiki/geth" target="_blank" rel="noopener">geth 终端</a></h3><hr>
+<p>这是一个命令行工具，它可以让你连接到正在运行的节点，并执行像创建和管理帐户、查询区块链、签署并提交交易给区块链等各种各样的操作。</p>
+<h3 id="Mist-浏览器"><a href="#Mist-浏览器" class="headerlink" title="Mist 浏览器"></a>Mist 浏览器</h3><hr>
+<p>这是一个用于与你的节点通信的桌面应用程序。 任何你能使用 geth 终端完成的操作都可以通过此图形用户界面来完成。</p>
+<h2 id="3-Parity"><a href="#3-Parity" class="headerlink" title="3. Parity"></a>3. <a href="https://github.com/paritytech/parity" target="_blank" rel="noopener">Parity</a></h2><hr>
+<p>Parity，用 Rust 语言编写，是另一个对以太坊协议很好的实现。这是一个由一家名为 <a href="https://parity.io/" target="_blank" rel="noopener">Parity Inc</a>的公司维护的非官方客户端。任何人都可以实现这样的客户端软件并加入以太坊网络。你可以按照这本<a href="https://ethereum.github.io/yellowpaper/paper.pdf" target="_blank" rel="noopener">黄皮书</a> 中的规范来实现自己的客户端！</p>
+<p><img src="https://i.imgur.com/geDMPPt.png" alt></p>
+<h2 id="4-Web3-js"><a href="#4-Web3-js" class="headerlink" title="4. Web3.js"></a>4. <a href="https://github.com/ethereum/web3.js/" target="_blank" rel="noopener">Web3.js</a></h2><hr>
+<p>就如同你用 geth，mist 浏览器等来与以太坊节点进行通信一样，还有一个名为 web3.js 的 javascript 库，也可以用来与一个节点进行交互。 由于它是一个 javaScript 库，你可以使用它来构建基于 web 的去中心化应用 (dapps)。</p>
+<p><img src="https://i.imgur.com/c8Y7lNd.png" alt></p>
+<h2 id="5-Solidity"><a href="#5-Solidity" class="headerlink" title="5. Solidity"></a>5. <a href="https://solidity.readthedocs.io/en/develop/" target="_blank" rel="noopener">Solidity</a></h2><hr>
+<p>Solidity 是用于编写在以太坊区块链上运行的智能合约最流行的编程语言。它是一种编译时转换为 EVM （以太坊虚拟机）字节码的高级语言。这与具有诸如 Scala，Groovy，Clojure，JRuby 等 JVM 语言的 java 世界非常相似。所有这些 JVM 语言都可以在编译时生成可在 JVM（Java虚拟机）中运行的字节码。 只要遵循规范，你也可以创建一个像 Solidity 这样的语言，编译时转换为有效的 EVM 字节码！</p>
+<p>还有一个非常棒的基于浏览器的 IDE，在这里你可以编写智能合约并将其编译部署到区块链上: <a href="http://remix.ethereum.org/" target="_blank" rel="noopener">http://remix.ethereum.org/</a>。</p>
+<h2 id="6-Truffle-Embark"><a href="#6-Truffle-Embark" class="headerlink" title="6. Truffle/Embark"></a>6. <a href="http://truffleframework.com/" target="_blank" rel="noopener">Truffle</a>/<a href="https://github.com/iurimatias/embark-framework" target="_blank" rel="noopener">Embark</a></h2><hr>
+<p>就像你有 Ruby on Rails，Python / Django 等 web 框架去做应用程序开发一样，Truffle 和 Embark 是用于开发以太坊去中心化应用（dapps）的两个最流行的框架。它们将在区块链上编译和部署合约的许多复杂的东西都抽象化了。</p>
+<p>如果你是个以太坊去中心化应用（dapp）开发新手，在<a href="https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2" target="_blank" rel="noopener">这里</a>，<a href="https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-2-30b3d335aa1f" target="_blank" rel="noopener">这里</a>还有<a href="https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-3-331c2712c9df" target="_blank" rel="noopener">这里</a>我已经为你写了一系列入门教程。</p>
+<h2 id="7-Metamask"><a href="#7-Metamask" class="headerlink" title="7. Metamask"></a>7. <a href="https://metamask.io/" target="_blank" rel="noopener">Metamask</a></h2><hr>
+<p>如果在以太坊社区晃荡超过一周，你一定会遇到 Metamask。它目前是一个用于与以太坊节点进行交互的 chrome 浏览器插件。让世界上的每个人都运行一个节点与区块链交互是不切实际的。所以，写 Metamask 的那帮家伙们自己运行了一定数量的节点，这样你就不需要这么做了。所有你需要做的就是装上 Metamask ，然后它就会自动连接到他们的节点了。</p>
+<p><img src="https://i.imgur.com/xQGGQr2.png" alt></p>
+<h2 id="8-ENS"><a href="#8-ENS" class="headerlink" title="8. ENS"></a>8. <a href="http://ens.domains/" target="_blank" rel="noopener">ENS</a></h2><hr>
+<p>以太坊域名系统（Ethereum Naming System）是以太坊世界的 DNS。就像你将 IP 地址映射到方便人们读取的名称一样，你可以将任何以太坊合约或钱包地址映射到一个易读的名称。</p>
+<p>例如: 146.115.22.177 → google.com. 您不需要在浏览器中输入 IP地址，输入 google.com 就好了，它会被解析到相应的 IP 地址。</p>
+<p>例如: 0x80C013d980aB049471c88E1603b8b4a60E03295C 是我的钱包地址。如果你想转给我一些以太币，你并不需要记住这个地址。一旦 ENS 启动，我可能会将其映射到 mvmurthy.eth，然后你就可以很轻松地用它给我转钱了 :)。</p>
+<h2 id="9-Swarm"><a href="#9-Swarm" class="headerlink" title="9. Swarm"></a>9. <a href="http://swarm-gateways.net/bzz:/theswarm.eth/" target="_blank" rel="noopener">Swarm</a></h2><hr>
+<p>区块链能很好地存储少量的数据。如果你想要存储病历，销售合同或需要公开时间戳的大型文件该怎么办呢？在区块链中存储大块数据是昂贵并且不可扩展的。Swarm 被用来解决这个问题。Swarm 是一个去中心化的内容存储和分发服务。您可以将它视为 CDN，但它并不是在一家公司的服务器上托管的所有 CDN，而是通过互联网在计算机上分发。你可以像运行一个以太坊节点一样，去运行一个 Swarm 节点并连接到 Swarm 网络上。</p>
+<p>当你将一个以太坊合约部署到区块链时，您会获得一个部署地址和一个 <a href="https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI" target="_blank" rel="noopener">ABI</a> JSON 接口（类似于 API 的合约接口）。当你希望有人使用您的合约时，你需要提供部署地址和 ABI。将来，ABI 会被存储在 Swarm 中，以便每个人都可以通过查看以太坊地址来查找 ABI。</p>
+<h2 id="10-IPFS"><a href="#10-IPFS" class="headerlink" title="10. IPFS"></a>10. <a href="https://ipfs.io/" target="_blank" rel="noopener">IPFS</a></h2><hr>
+<p>IPFS（星际文件系统）在概念上与 Swarm 非常相似。它是一个去中心化的存储系统。与以太坊没有直接关联，但可以与以太坊集成。</p>
+<p>你可以在这里查看 Swarm 和 IPFS 之间的不同: <a href="https://github.com/ethersphere/go-ethereum/wiki/IPFS-&amp;-SWARM" target="_blank" rel="noopener">https://github.com/ethersphere/go-ethereum/wiki/IPFS-&amp;-SWARM</a></p>
+<h2 id="11-Whisper"><a href="#11-Whisper" class="headerlink" title="11. Whisper"></a>11. <a href="https://github.com/ethereum/wiki/wiki/Whisper" target="_blank" rel="noopener">Whisper</a></h2><hr>
+<p>你可能没怎么听到过 Whisper，不过它也是在以太坊生态系统中一项有趣的技术。它是 Dapps 之间交互的通信协议。你可以在这里看到关于它的更多内容: <a href="https://github.com/ethereum/wiki/wiki/Whisper" target="_blank" rel="noopener">https://github.com/ethereum/wiki/wiki/Whisper</a></p>
+<p>下图尝试把所有这些东西放在一起：</p>
+<p><img src="https://i.imgur.com/H48W22N.png" alt></p>
+<p>希望这能让你对以太坊生态系统有一个概括性的了解，并从现在开始能对每个相关组件进行更深入的研究和理解。</p>
+<p>如果你有兴趣学习更多关于以太坊开发的知识，欢迎在<a href="http://zastrin.com/" target="_blank" rel="noopener">这里</a>注册。</p>
+<blockquote>
+<p>via: <a href="https://medium.com/blockchannel/tools-and-technologies-in-the-ethereum-ecosystem-e5b7e5060eb9" target="_blank" rel="noopener">https://medium.com/blockchannel/tools-and-technologies-in-the-ethereum-ecosystem-e5b7e5060eb9</a><br>作者：[Mahesh Murthy](<a href="https://medium.com/@mvmurthy" target="_blank" rel="noopener">https://medium.com/@mvmurthy</a>)<br>译者：[Ashton](<a href="https://github.com/Ashton" target="_blank" rel="noopener">https://github.com/Ashton</a>)<br>校对：[dbarobin](<a href="https://github.com/dbarobin" target="_blank" rel="noopener">https://github.com/dbarobin</a>)</p>
+</blockquote>
+<p>「区块链技术指北」同名 <strong>知识星球</strong>，二维码如下，欢迎加入。BTW，<strong>李笑来老师也加入了</strong>。</p>
+<p><img src="https://i.imgur.com/RBmpxTL.png" alt="区块链技术指北"></p>
+<p>「区块链技术指北」相关资讯渠道：</p>
+<ul>
+<li>「区块链技术指北」同名知识星球，<a href="https://t.xiaomiquan.com/ZRbmaU3" target="_blank" rel="noopener">https://t.xiaomiquan.com/ZRbmaU3</a></li>
+<li>官网，<a href="https://chainon.io" target="_blank" rel="noopener">https://chainon.io</a></li>
+<li>官方博客，<a href="https://blog.chainon.io">https://blog.chainon.io</a></li>
+<li>官方社区，<a href="https://bbs.chainon.io" target="_blank" rel="noopener">https://bbs.chainon.io</a></li>
+<li>Telegram Channel，<a href="https://t.me/BlockchainAge" target="_blank" rel="noopener">https://t.me/BlockchainAge</a></li>
+<li>Telegram Group，<a href="https://t.me/bcage" target="_blank" rel="noopener">https://t.me/bcage</a></li>
+<li>Twitter，<a href="https://twitter.com/bcageone" target="_blank" rel="noopener">https://twitter.com/bcageone</a></li>
+<li>新浪微博，<a href="https://weibo.com/BlockchainAge" target="_blank" rel="noopener">https://weibo.com/BlockchainAge</a></li>
+</ul>
+<p>同时，本系列文章会在以下渠道同步更新，欢迎关注：</p>
+<ul>
+<li>「区块链技术指北」同名微信公众号（微信号：BlockchainAge）</li>
+<li>官方博客，<a href="https://blog.chainon.io">https://blog.chainon.io</a></li>
+<li>知乎专栏，<a href="https://zhuanlan.zhihu.com/robinwen" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/robinwen</a></li>
+<li>简书，<a href="https://www.jianshu.com/c/a37698a12ba9" target="_blank" rel="noopener">https://www.jianshu.com/c/a37698a12ba9</a></li>
+<li>Steemit，<a href="https://steemit.com/@chainone" target="_blank" rel="noopener">https://steemit.com/@chainone</a></li>
+<li>Medium，<a href="https://medium.com/@chainone.org" target="_blank" rel="noopener">https://medium.com/@chainone.org</a></li>
+<li>币乎，<a href="https://bihu.com/people/345886" target="_blank" rel="noopener">https://bihu.com/people/345886</a></li>
+<li>掘金，<a href="https://juejin.im/user/5673ccae60b2260ee435f89a/posts" target="_blank" rel="noopener">robinwen@juejin.im</a></li>
+</ul>
+<p>原创不易，读者可以通过如下途径打赏，虚拟货币、美元、法币均支持。</p>
+<ul>
+<li>BTC: 1HRZ7og2KjqpP3v3jskgueNu64kJrFU8GD</li>
+<li>ERC20 Token: 0x5c8DEB48dC08b5dC60A0290B718690a801509Dd1</li>
+<li>PayPal: <a href="https://www.paypal.me/robinwen" target="_blank" rel="noopener">https://www.paypal.me/robinwen</a></li>
+<li>微信打赏二维码</li>
+</ul>
+<p><img src="https://i.imgur.com/SzoNl5b.jpg" alt="Wechat"></p>
+<p>–EOF–</p>
+<p>版权声明：<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener">自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: 'f5d48c610cdf262e4f5c',
+            clientSecret: '52171aebeb6b254d1d599a10c411a3855650f4d2',
+            repo: 'BlockchainOne.github.io',
+            owner: 'BlockchainOne',
+            admin: ['dbarobin'],
+			id: md5(location.pathname),
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/04/15/chainone-wechat-issue-18/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/09/chainone-wechat-issue-17/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+
+            <!-- ad start -->
+            
+            <!-- ad end -->
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="ChainONE's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        chainone.org@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="chainone.org@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">二月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">16</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Blockchain/">Blockchain<span class="sidebar_archives-count">32</span></a></li><li><a class="sidebar_archives-link" href="/categories/EOS/">EOS<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/WeChat/">WeChat<span class="sidebar_archives-count">128</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">168</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/bcageone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/BlockchainAge" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/BlockchainOne" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://zhuanlan.zhihu.com/robinwen" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+        <a href="https://t.me/chainone" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-telegram">
+                <span class="visuallyhidden">Telegram</span>
+            </button><!--
+     --></a>
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>区块链技术指北 | ChainONE 官方博客
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?d+XW6aNuIPgOn1iA7NnB4g==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',false);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+   
+                    <!-- Google Ad -->
+                </main>
+            </div>
+        </body>
+    
+</html>
